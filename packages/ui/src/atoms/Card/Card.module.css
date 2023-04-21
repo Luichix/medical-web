@@ -1,0 +1,97 @@
+.card {
+  display: flex;
+}
+
+/* -------------------------------- direction ------------------------------- */
+
+.vertical {
+  flex-direction: column;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+/* ---------------------------------- sizes --------------------------------- */
+
+.xs {
+  border-radius: var(--border-radius-xs);
+}
+
+.sm {
+  border-radius: var(--border-radius-sm);
+}
+
+.nm {
+  border-radius: var(--border-radius-sm);
+}
+
+.md {
+  width: 192px;
+  height: 192px;
+  border-radius: var(--border-radius-md);
+}
+
+.lg {
+  border-radius: var(--border-radius-sm);
+}
+
+.xl {
+  border-radius: var(--border-radius-sm);
+}
+
+.xxl {
+  border-radius: var(--border-radius-sm);
+}
+
+/* --------------------------------- colors --------------------------------- */
+
+.primary {
+  color: var(--color-primary-inverted);
+  background: var(--color-primary);
+}
+
+.secondary {
+  color: var(--color-secondary-inverted);
+  background: var(--color-secondary);
+}
+
+.none {
+  border: var(--border-width-thin) solid var(--color-blue-grey-100);
+  background: var(--color-base-transparent);
+  overflow: hidden;
+}
+
+/* ------------------------------- dimensions ------------------------------- */
+
+.small {
+  padding: 10px 16px;
+}
+.normal {
+  padding: 16px 24px;
+}
+.medium {
+  padding: 11px 20px;
+}
+.large {
+  padding: 12px 24px;
+}
+.extra {
+  padding: 16px 48px;
+}
+
+/* --------------------------------- actions -------------------------------- */
+
+.isClickable {
+  cursor: pointer;
+}
+
+.isDraggable {
+  cursor: grab;
+  user-select: none;
+}
+
+.isClickable:active,
+.isDraggable:active {
+  box-shadow: var(--box-shadow-xs);
+}

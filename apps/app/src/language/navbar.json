@@ -1,0 +1,24 @@
+{
+  "en": {
+    "home": "Inicio",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "dashboard": "Dashboard",
+    "price": "Pricing",
+    "product": "Products",
+    "login": "Login",
+    "register": "Register"
+  },
+  "es": {
+    "home": "Inicio",
+    "about": "¿Quienes somos?",
+    "contact": "Contactanos",
+    "blog": "Blog",
+    "dashboard": "Dashboard",
+    "price": "Planes",
+    "product": "Nuestros servicios",
+    "login": "Iniciar sesión",
+    "register": "Registrarse"
+  }
+}

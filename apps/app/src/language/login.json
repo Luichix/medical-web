@@ -1,0 +1,42 @@
+{
+  "en": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "dashboard": "Dashboard",
+    "price": "Pricing",
+    "product": "Products",
+    "login": "Login",
+    "register": "Register",
+    "titleLogin": "Welcome!",
+    "messageLogin": "Login to manage your account",
+    "emailLogin": "Email address",
+    "placeEmailLogin": "Correo electrónico",
+    "passwordLogin": "Password",
+    "placePasswordLogin": "Contraseña",
+    "forgotLogin": "Forgot password?",
+    "googleLogin": "sign in with Google",
+    "buttonLogin": "Login",
+    "accountLogin": "You do not have an account?",
+    "createLogin": "Create an account"
+  },
+  "es": {
+    "home": "Inicio",
+    "price": "Precios",
+    "product": "Productos",
+    "login": "Ingresar",
+    "register": "Registrarse",
+    "titleLogin": "Bienvenido!",
+    "messageLogin": "Ingrese para administrar su cuenta",
+    "emailLogin": "Correo electrónico",
+    "placeEmailLogin": "Correo electrónico",
+    "passwordLogin": "Contraseña",
+    "placePasswordLogin": "Contraseña",
+    "forgotLogin": "¿Olvidaste tu contraseña?",
+    "googleLogin": "ingresar con Google",
+    "buttonLogin": "Ingresar",
+    "accountLogin": "¿No tienes una cuenta?",
+    "createLogin": "Crear una cuenta"
+  }
+}

@@ -1,0 +1,73 @@
+.content {
+  position: relative;
+  padding: 0 4px;
+  justify-content: center;
+}
+
+/* Contenedor */
+.contentCheck {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border: 0.5px solid var(--color-gray-300);
+  border-radius: var(--border-radius-xs);
+  padding: 0px 5px;
+  background-color: var(--color-base-white);
+}
+
+/* escondemos el default checkbox */
+.checkbox {
+  position: relative;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* creamos un custom checkbox */
+.checkmark {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+/* Al pasar el mouse encima, lo ponemos gris */
+.contentCheck:hover {
+  background-color: var(--input-background);
+}
+
+/* creamos el marcador (escondido al no seleccionar) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+}
+
+/* mostramos el marcador al seleccionar */
+.contentCheck > input:checked ~ .checkmark:after {
+  position: relative;
+  display: inline-block;
+  width: 5px;
+  height: 12px;
+  border: solid var(--color-primary);
+  transform: rotate(45deg);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  padding: 4px;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}

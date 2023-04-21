@@ -1,0 +1,43 @@
+{
+  "plan": {
+    "bronze": {
+      "title": "Basic",
+      "subtitle": "$100",
+      "points": [
+        "Calendario adaptativo",
+        "Estadisticas clinicas",
+        "Historial médico",
+        "Inventario"
+      ],
+      "value": "100",
+      "currency": "/$",
+      "button": "Choose"
+    },
+    "silver": {
+      "title": "Basic",
+      "subtitle": "$100",
+      "points": [
+        "Calendario adaptativo",
+        "Estadisticas clinicas",
+        "Historial médico",
+        "Inventario"
+      ],
+      "value": "200",
+      "currency": "/$",
+      "button": "Choose"
+    },
+    "gold": {
+      "title": "Basic",
+      "subtitle": "$100",
+      "points": [
+        "Calendario adaptativo",
+        "Estadisticas clinicas",
+        "Historial médico",
+        "Inventario"
+      ],
+      "value": "300",
+      "currency": "/$",
+      "button": "Choose"
+    }
+  }
+}

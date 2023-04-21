@@ -1,0 +1,44 @@
+.switch {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  display: none;
+}
+
+.button {
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+  background-color: var(--color-gray-200);
+  border-radius: var(--border-radius-lg);
+  position: relative;
+  cursor: pointer;
+}
+
+.button::after {
+  content: '';
+  /* content: url('../../../assets/sun.svg'); */
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-yellow-400);
+  border: 2px solid var(--color-base-white);
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: -5px;
+  left: 0;
+  display: grid;
+  place-content: center;
+  line-height: 0;
+  transition: background-color 0.3s, transform 0.3s ease-in;
+}
+.input:checked + .button::after {
+  content: '';
+  /* content: url('../../../assets/moon.svg'); */
+  background-color: var(--color-sky-900);
+  transform: translateX(35px) rotate(360deg);
+}

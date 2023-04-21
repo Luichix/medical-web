@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 80vw;
+  height: 80vh;
+}
+
+.container h3 {
+  letter-spacing: 0.5px;
+  color: var(--color-primary-highlight);
+}
+
+/* --------------------------------- headers -------------------------------- */
+
+.header {
+  padding: 3rem 20px;
+}
+
+/* ---------------------------------- form ---------------------------------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* ----------------------------- element record ----------------------------- */
+
+.element {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.element label {
+  border-bottom: 1px solid var(--color-tertiary-inverted);
+  border-left: 6px solid var(--color-primary-highlight);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.element input:focus,
+.element textarea:focus {
+  background-color: var(--input-background);
+}
+
+/* --------------------------------- button --------------------------------- */
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: transparent;
+  border: transparent;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-base-white);
+  color: var(--color-primary-highlight);
+  font-size: 24px;
+}

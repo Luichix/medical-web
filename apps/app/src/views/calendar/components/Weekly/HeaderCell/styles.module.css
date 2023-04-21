@@ -1,0 +1,53 @@
+/** days */
+
+.days {
+  font-family: var(--font-family-roboto);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  align-items: center;
+  color: #627d98;
+}
+
+.days:nth-child(2) {
+  color: #9fb3c8;
+}
+
+.days:last-child {
+  color: #9fb3c8;
+}
+
+/** day */
+
+.day {
+  position: relative;
+}
+
+/** weekend */
+
+.weekend {
+  background-color: #f9f9f9;
+}
+
+/** today */
+
+.today {
+  font-weight: 600;
+  background-color: var(--color-primary-highlight);
+}
+
+.today span {
+  color: var(--color-base-white);
+}
+
+/** indicator */
+.indicator {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary-highlight);
+}

@@ -1,0 +1,110 @@
+.container {
+  width: 250px;
+  min-width: 100%;
+  overflow-x: auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* ---------------------------------- table --------------------------------- */
+
+.table {
+  border-spacing: 0;
+  width: 100%;
+  padding: 0.5rem 0rem 0 0rem;
+  position: relative;
+  border-collapse: separate;
+  background: #f9fafb;
+  border: 1px solid var(--color-tertiary-inverted);
+}
+
+.table tbody tr:hover {
+  outline: 2px solid var(--color-blue-gray-400);
+  outline-offset: 0px;
+  border-collapse: none;
+  text-shadow: 0px 0px 0px rgba(32, 86, 126, 0.5);
+}
+
+/* .table tr:hover td {
+  color: #02233d;
+} */
+
+.table tr:hover td:first-child {
+  border-left: 8px solid var(--color-blue-gray-400);
+  transition: border 0.15s;
+}
+
+.table tr td:first-child,
+.table tr th:first-child {
+  border-left: 8px solid transparent;
+  transition: border 0.15s;
+}
+
+.th {
+  text-indent: 1rem;
+  text-align: left;
+  padding: 12px 0;
+  border-bottom: 2px solid var(--color-tertiary-inverted);
+  white-space: nowrap;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-roboto);
+  color: #102a43;
+}
+
+.th span:first-child {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.td {
+  text-indent: 1.5rem;
+  font-family: var(--font-family-roboto);
+  color: #20567e;
+  min-width: 60px;
+  height: 64px;
+  text-align: left;
+  padding: 0;
+  border-collapse: collapse;
+  border-bottom: 1px solid var(--color-tertiary-inverted);
+  white-space: nowrap;
+  font-size: var(--font-size-base);
+}
+
+.headStyles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bodyTable {
+  background: #ffffff;
+}
+
+/* ---------------------------------- theme --------------------------------- */
+
+.light {
+  background-color: var(--color-base-white);
+}
+
+.dark {
+  background-color: var(--color-blue-gray-900);
+}
+
+/* -------------------------- scroll kit container -------------------------- */
+
+.container::-webkit-scrollbar {
+  width: 20px; /* Ancho del scrollbar */
+  height: 14px; /* Altura del scrollbar */
+  background-color: #f5f5f5; /* Color del fondo del scrollbar */
+  border-radius: 10px; /* Radio de la esquina del scrollbar */
+  border: none;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #aaa; /* Color del thumb del scrollbar */
+  border-radius: 10px; /* Radio de la esquina del thumb del scrollbar */
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Color del track del scrollbar */
+  border-radius: 10px; /* Radio de la esquina del track del scrollbar */
+}

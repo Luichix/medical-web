@@ -1,0 +1,65 @@
+.InputGroup {
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  white-space: wrap;
+  min-width: 175px;
+  width: 100%;
+}
+
+.columned {
+  display: flex;
+  flex-direction: column;
+}
+
+.rowed {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input {
+  font-family: var(--font-family-open);
+  width: 100%;
+  font-size: var(--font-size-sm);
+  outline: none;
+  border: 0;
+  border-radius: 8px;
+  color: var(--color-gray-500);
+  background-color: var(--color-gray-100);
+}
+
+.input:disabled {
+  background-color: var(--color-gray-100);
+}
+
+.md {
+  padding: 16px 24px;
+}
+
+.sm {
+  padding: 12px 24px 12px 12px;
+}
+
+.xs {
+  padding: 8px 24px 8px 12px;
+}
+
+@media screen and (min-width: 600px) {
+  .columned {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .rowed {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

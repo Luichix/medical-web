@@ -1,0 +1,18 @@
+/* ------------------------------- add button ------------------------------- */
+
+.button {
+  box-sizing: border-box;
+  width: 192px;
+  height: 192px;
+  left: 766px;
+  top: 613px;
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 25px;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  color: #d9e2ec;
+}

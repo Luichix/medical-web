@@ -1,0 +1,37 @@
+/* ---------------------------- default layout ---------------------------- */
+
+.layout {
+  position: relative;
+  transition: background-color 0.5s ease-in-out;
+  font-family: var(--font-family-roboto);
+}
+
+/* -------------------------------- container ------------------------------- */
+
+.container {
+  display: flex;
+  padding: 4rem;
+  background-color: transparent;
+}
+
+.main {
+  position: relative;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+/* --------------------------------- sidebar -------------------------------- */
+
+.noSiderbar {
+  display: flex;
+}
+
+/* ---------------------------------- theme --------------------------------- */
+
+.light {
+  background-color: var(--color-base-white);
+}
+
+.dark {
+  background-color: var(--color-blue-gray-900);
+}

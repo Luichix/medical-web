@@ -1,0 +1,33 @@
+.collection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  position: 'relative';
+}
+
+.container {
+  width: max-content;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  background-color: #f0f4f8;
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #486581;
+}
+
+.content {
+  padding: 10px;
+}
+
+.content p::first-letter,
+.content h3::first-letter {
+  text-transform: capitalize;
+}

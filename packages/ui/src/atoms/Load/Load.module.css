@@ -1,0 +1,48 @@
+.container {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  width: 40px;
+  height: 40px;
+}
+
+.loader {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #e3f3ed;
+  border-top-color: #aedecb;
+  border-bottom-color: #cfece1;
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+}
+
+.inner {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #1f9682;
+  border-top-color: #dbfff2;
+  border-bottom-color: rgb(188, 237, 209);
+  animation: rotate 5s linear infinite;
+  animation-duration: 2.5s;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotate(360deg);
+  }
+  50% {
+    transform: scale(0.8) rotate(-360deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}

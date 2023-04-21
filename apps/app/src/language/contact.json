@@ -1,0 +1,20 @@
+{
+  "es": {
+    "title": "Contactanos",
+    "name": "Nombre",
+    "surname": "Apellido",
+    "phone": "No. Teléfono",
+    "email": "Email",
+    "address": "Dirección",
+    "send": "Enviar"
+  },
+  "en": {
+    "title": "Contactanos",
+    "name": "Nombre",
+    "surname": "Apellido",
+    "phone": "No. Teléfono",
+    "email": "Email",
+    "address": "Dirección",
+    "send": "Enviar"
+  }
+}

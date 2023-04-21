@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: auto;
+  padding: 20px 15px;
+  margin: 0 auto;
+}
+
+.isCentered {
+  justify-content: center;
+}
+
+.isPlayground {
+  border: var(--border-width-thick) dashed var(--color-primary);
+}

@@ -1,0 +1,71 @@
+.container {
+  position: relative;
+}
+
+.options {
+  position: relative;
+  outline: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gray-400);
+  transition: color 0.2s ease-in-out;
+  border-radius: var(--border-radius-xs);
+  padding: 4px;
+  background-color: transparent;
+}
+
+.options:hover,
+.options:focus {
+  color: #4b5563;
+}
+
+.menu {
+  list-style: none;
+  position: absolute;
+  min-width: 100%;
+  padding: 2px;
+  background-color: #fff;
+  border: 1px solid var(--color-gray-200);
+  outline: none;
+  border-radius: var(--border-radius-xs);
+  z-index: 999;
+  white-space: nowrap;
+}
+
+.option {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  color: #1f2937;
+}
+
+.option:active,
+.option:hover {
+  background-color: #aaa;
+  color: #fff;
+}
+
+.option::selection {
+  font-weight: 600;
+}
+
+.option.selected::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #6366f1;
+  border-radius: 0.375rem;
+  display: inline-block;
+}
+
+.selected {
+  font-weight: 600; /* equivalent to Tailwind's font-semibold */
+}

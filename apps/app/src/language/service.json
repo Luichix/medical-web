@@ -1,0 +1,86 @@
+{
+  "es": {
+    "title": "Nuestros Servicios",
+    "content": "Aliquip laboris dolor aliqua adipisicing Lorem amet pariatur do sint consequat nulla eu. Do enim veniam minim deserunt elit labore reprehenderit laborum est sunt.",
+    "services": [
+      {
+        "title": "Enfermeria",
+        "content": [
+          "Cupidatat duis in veniam consectetur consectetur ad. Est adipisicing voluptate magna eiusmod laborum laboris ut. Laboris esse veniam exercitation Lorem deserunt veniam do elit tempor exercitation pariatur consectetur.",
+          "Adipisicing ipsum incididunt ad nostrud. Voluptate sint ipsum ad eu enim ipsum culpa laborum dolore do."
+        ],
+        "src": "/service.jpg",
+        "button": "Conoce más"
+      },
+      {
+        "title": "Enfermeria",
+        "content": [
+          "Cupidatat duis in veniam consectetur consectetur ad. Est adipisicing voluptate magna eiusmod laborum laboris ut. Laboris esse veniam exercitation Lorem deserunt veniam do elit tempor exercitation pariatur consectetur.",
+          "Adipisicing ipsum incididunt ad nostrud. Voluptate sint ipsum ad eu enim ipsum culpa laborum dolore do."
+        ],
+        "src": "/service.jpg",
+        "button": "Conoce más"
+      },
+      {
+        "title": "Enfermeria",
+        "content": [
+          "Cupidatat duis in veniam consectetur consectetur ad. Est adipisicing voluptate magna eiusmod laborum laboris ut. Laboris esse veniam exercitation Lorem deserunt veniam do elit tempor exercitation pariatur consectetur.",
+          "Adipisicing ipsum incididunt ad nostrud. Voluptate sint ipsum ad eu enim ipsum culpa laborum dolore do."
+        ],
+        "src": "/service.jpg",
+        "button": "Conoce más"
+      },
+      {
+        "title": "Enfermeria",
+        "content": [
+          "Cupidatat duis in veniam consectetur consectetur ad. Est adipisicing voluptate magna eiusmod laborum laboris ut. Laboris esse veniam exercitation Lorem deserunt veniam do elit tempor exercitation pariatur consectetur.",
+          "Adipisicing ipsum incididunt ad nostrud. Voluptate sint ipsum ad eu enim ipsum culpa laborum dolore do."
+        ],
+        "src": "/service.jpg",
+        "button": "Conoce más"
+      }
+    ]
+  },
+  "en": {
+    "title": "Nuestros Servicios",
+    "content": "Aliquip laboris dolor aliqua adipisicing Lorem amet pariatur do sint consequat nulla eu. Do enim veniam minim deserunt elit labore reprehenderit laborum est sunt.",
+    "services": [
+      {
+        "title": "Enfermeria",
+        "content": [
+          "Cupidatat duis in veniam consectetur consectetur ad. Est adipisicing voluptate magna eiusmod laborum laboris ut. Laboris esse veniam exercitation Lorem deserunt veniam do elit tempor exercitation pariatur consectetur.",
+          "Adipisicing ipsum incididunt ad nostrud. Voluptate sint ipsum ad eu enim ipsum culpa laborum dolore do."
+        ],
+        "src": "/service.jpg",
+        "button": "Conoce más"
+      },
+      {
+        "title": "Enfermeria",
+        "content": [
+          "Cupidatat duis in veniam consectetur consectetur ad. Est adipisicing voluptate magna eiusmod laborum laboris ut. Laboris esse veniam exercitation Lorem deserunt veniam do elit tempor exercitation pariatur consectetur.",
+          "Adipisicing ipsum incididunt ad nostrud. Voluptate sint ipsum ad eu enim ipsum culpa laborum dolore do."
+        ],
+        "src": "/service.jpg",
+        "button": "Conoce más"
+      },
+      {
+        "title": "Enfermeria",
+        "content": [
+          "Cupidatat duis in veniam consectetur consectetur ad. Est adipisicing voluptate magna eiusmod laborum laboris ut. Laboris esse veniam exercitation Lorem deserunt veniam do elit tempor exercitation pariatur consectetur.",
+          "Adipisicing ipsum incididunt ad nostrud. Voluptate sint ipsum ad eu enim ipsum culpa laborum dolore do."
+        ],
+        "src": "/service.jpg",
+        "button": "Conoce más"
+      },
+      {
+        "title": "Enfermeria",
+        "content": [
+          "Cupidatat duis in veniam consectetur consectetur ad. Est adipisicing voluptate magna eiusmod laborum laboris ut. Laboris esse veniam exercitation Lorem deserunt veniam do elit tempor exercitation pariatur consectetur.",
+          "Adipisicing ipsum incididunt ad nostrud. Voluptate sint ipsum ad eu enim ipsum culpa laborum dolore do."
+        ],
+        "src": "/service.jpg",
+        "button": "Conoce más"
+      }
+    ]
+  }
+}

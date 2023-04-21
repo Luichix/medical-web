@@ -1,0 +1,84 @@
+/** Style Structure
+ * 
+ * - container
+ * - - - h3
+ * - - - form
+ * - - - - - h4
+ * - - - - - span
+ * - - - - - fieldset
+ * - - - - - - -label
+ * - - - - - - - - input 
+ * - - - - - button 
+ * 
+ */
+
+.container {
+  width: 100%;
+  padding: 4rem;
+  font-family: var(--font-family-roboto);
+}
+
+.title {
+  font-family: var(--font-family-roboto);
+  color: var(--color-secondary-highlight);
+  font-weight: 700;
+  padding: 1rem 0;
+  font-size: var(--font-size-sm);
+  border-bottom: 4px solid #f0f4f8;
+}
+
+/** InputsForm */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  outline: none;
+  border: none;
+  gap: 2rem;
+  padding: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.subtitle {
+  color: var(--color-secondary-highlight);
+  font-weight: 700;
+  position: relative;
+}
+
+.subtitle::before {
+  position: absolute;
+  display: block;
+  content: '_____';
+  color: transparent;
+  text-decoration: underline;
+  text-decoration-thickness: calc(3px);
+  text-underline-offset: 1rem;
+  text-decoration-color: #2cb1bc;
+}
+
+.details {
+  padding: 1.5rem 0 0 0;
+  color: var(--color-secondary-inverted);
+}
+
+.section label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-roboto);
+  font-style: normal;
+  font-weight: 500;
+  font-size: var(--font-size-base);
+  line-height: 19px;
+  color: var(--color-secondary);
+  flex: 1;
+}
+
+.form button {
+  align-self: flex-end;
+}

@@ -1,0 +1,38 @@
+{
+  "es": {
+    "question": "¿Cual es nuestro proposito y como lo hacemos?",
+    "aboutUs": "Somos un centro de estimulación temprana en Guatemala, que utiliza las mejores tecnicas y estudios para la formación de infantes",
+    "services": [
+      {
+        "title": "Ipsum eiusmod ad cillum adipisicing.",
+        "content": "Consectetur excepteur aliqua non excepteur dolor incididunt magna. Ut cupidatat ullamco excepteur non fugiat voluptate ea sit occaecat occaecat consectetur."
+      },
+      {
+        "title": "Ipsum eiusmod ad cillum adipisicing.",
+        "content": "Consectetur excepteur aliqua non excepteur dolor incididunt magna. Ut cupidatat ullamco excepteur non fugiat voluptate ea sit occaecat occaecat consectetur."
+      },
+      {
+        "title": "Ipsum eiusmod ad cillum adipisicing.",
+        "content": "Consectetur excepteur aliqua non excepteur dolor incididunt magna. Ut cupidatat ullamco excepteur non fugiat voluptate ea sit occaecat occaecat consectetur."
+      }
+    ]
+  },
+  "en": {
+    "question": "¿Cual es nuestro proposito y como lo hacemos?",
+    "aboutUs": "Somos un centro de estimulación temprana en Guatemala, que utiliza las mejores tecnicas y estudios para la formación de infantes",
+    "services": [
+      {
+        "title": "Ipsum eiusmod ad cillum adipisicing.",
+        "content": "Consectetur excepteur aliqua non excepteur dolor incididunt magna. Ut cupidatat ullamco excepteur non fugiat voluptate ea sit occaecat occaecat consectetur."
+      },
+      {
+        "title": "Ipsum eiusmod ad cillum adipisicing.",
+        "content": "Consectetur excepteur aliqua non excepteur dolor incididunt magna. Ut cupidatat ullamco excepteur non fugiat voluptate ea sit occaecat occaecat consectetur."
+      },
+      {
+        "title": "Ipsum eiusmod ad cillum adipisicing.",
+        "content": "Consectetur excepteur aliqua non excepteur dolor incididunt magna. Ut cupidatat ullamco excepteur non fugiat voluptate ea sit occaecat occaecat consectetur."
+      }
+    ]
+  }
+}

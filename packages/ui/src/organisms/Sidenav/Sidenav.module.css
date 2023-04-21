@@ -1,0 +1,92 @@
+/* ------------------------------ theme sidebar ----------------------------- */
+
+.light {
+  background-color: var(--color-base-white);
+  color: var(--color-gray-700);
+}
+
+.dark {
+  background-color: var(--color-blue-gray-800);
+  color: var(--color-base-white);
+}
+
+/* ----------------------------- sidenav styles ----------------------------- */
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+  transition: all 0.5s;
+  border-right: 1px solid #d9e2ec;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 2rem;
+  background-color: var(--color-base-white);
+}
+
+.sidenav::-webkit-scrollbar {
+  background-color: rgb(197, 202, 198);
+  width: 0.5em;
+}
+
+.sidenav::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-sm);
+}
+
+/* ----------------------------- list container ----------------------------- */
+
+.list {
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-direction: column;
+}
+
+/* ---------------------------- behavior sidenav ---------------------------- */
+
+.visible {
+  width: 275px;
+  z-index: 900;
+  transition: all 0.3s;
+}
+.hidden {
+  width: 0px;
+  z-index: 900;
+  transition: all 0.3s;
+  animation-name: appear;
+  animation-duration: 0.3s;
+}
+
+@keyframes appear {
+  from {
+    filter: brightness(1.1);
+  }
+  to {
+    filter: brightness(1);
+  }
+}
+
+.buttonBar {
+  position: fixed;
+  top: 1rem;
+  right: 8px;
+  z-index: 999;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    min-width: 64px;
+  }
+
+  .hidden {
+    width: 65px;
+  }
+
+  .buttonBar {
+    left: 8px;
+    right: initial;
+  }
+}

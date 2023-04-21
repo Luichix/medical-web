@@ -3,7 +3,7 @@ import {
   updatePreviousMonth,
   updateNextMonth,
 } from '@/views/calendar/utils/updateTime'
-import createCalendar, { IWeek } from '@/views/calendar/utils/createCalendar'
+import createCalendar, { Week } from '@/views/calendar/utils/createCalendar'
 import { calculateCalendar } from '@/views/calendar/utils/calculateCalendar'
 import dayjs from 'dayjs'
 import { GetAppointment } from '@/interfaces/reminder'
@@ -11,57 +11,20 @@ import EventAPI from '@/pages/api/Event'
 
 /* ---------------------------------- types --------------------------------- */
 
-type FecthYear = Record<string, NewWeek>
+type FecthYear = Record<string, Week[]>
 
-type Year = Record<number, IWeek[]>
+type Year = Record<number, Week[]>
 
-interface OtherProperties {
-  dayName?: string
-  isCurrentMonth?: boolean
-  isCurrentWeek?: boolean
-}
-
-export interface NewDay extends OtherProperties {
-  dayweek: number
-  daymonth: number
-  date: string
-  month: number
-  isToday: boolean
-  events: any
-}
-
-type NewWeek = NewDay[]
-
-type NewMonth = NewWeek[]
-
-type NewYear = Record<string, NewWeek[]>
-
-export interface NextCalendar {
-  selectedDate: string
-  currentDay: number
-  currentWeek: number
-  currentMonth: number
-  currentYear: number
-  week: NewWeek
-  month: NewMonth
-  year: NewYear
-}
-
-interface NewCalendarState {
-  calendar: NextCalendar
-  pending: boolean
-  error: boolean
-}
-
-export interface Calendar extends NewCalendarState {
+export interface Calendar {
   selectedDate: string
   currentMonthIndex: number
-  week: IWeek
-  month: IWeek[]
-  year: Year
-  currentYear: number
+  currentDay: number
   currentMonth: number
   currentWeek: number
+  currentYear: number
+  week: Week
+  month: Week[]
+  year: Year
 }
 
 /* ------------------------------ initial state ----------------------------- */
@@ -85,71 +48,13 @@ const weekCalendar = monthCalendar[currentWeek]
 const initialState: Calendar = {
   selectedDate: currentDate,
   currentMonthIndex: 0,
+  currentDay: currentDay,
+  currentWeek: currentWeek,
+  currentMonth: currentMonth,
+  currentYear: currentYear,
   week: weekCalendar,
   month: monthCalendar,
   year: { 0: monthCalendar },
-  currentMonth: currentMonth,
-  currentYear: currentYear,
-  currentWeek: currentWeek,
-  calendar: {
-    selectedDate: currentDate,
-    currentDay: currentDay,
-    currentWeek,
-    currentMonth,
-    currentYear,
-    week: [],
-    month: [],
-    year: {},
-  },
-  pending: false,
-  error: false,
-}
-
-/* ---------------------------------- fetch --------------------------------- */
-
-export const getCalendar = createAsyncThunk(
-  'calendar/getCalendar',
-  async (params: GetAppointment) => {
-    const response = await EventAPI.getAppointment({ params })
-    const month = getWeeksOfMonth(response, currentMonth)
-    const week = getCurrentWeekOfMonth(month) ?? month[0]
-    return {
-      year: response,
-      month,
-      week,
-    }
-  }
-)
-
-/* ------------------------------- interceptor ------------------------------ */
-
-function getWeeksOfMonth(yearWeeks: FecthYear, monthNumber: number) {
-  const weeks = Object.values(yearWeeks) // Obtenemos todas las semanas del año
-  console.log(
-    '🚀 ~ file: calendar.slice.ts:128 ~ getWeeksOfMonth ~ weeks:',
-    weeks[0][0]
-  )
-
-  const weeksOfMonth = weeks.filter((week) => {
-    // Filtramos las semanas que tienen días del mes especificado
-    return week.some((day) => day.month === monthNumber)
-  })
-  return weeksOfMonth
-}
-
-function getCurrentWeekOfMonth(weeksOfMonth: NewMonth) {
-  const now = new Date()
-  const currentWeek = Object.values(weeksOfMonth).find((week) =>
-    week.some((day) => {
-      const date = new Date(day.date)
-      return (
-        date.getFullYear() === now.getFullYear() &&
-        date.getMonth() === now.getMonth() &&
-        date.getDate() === now.getDate()
-      )
-    })
-  )
-  return currentWeek || null
 }
 
 /* ---------------------------------- slice --------------------------------- */
@@ -304,22 +209,6 @@ export const calendarSlice = createSlice({
       }
     },
     getCurrentDate: () => initialState,
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(getCalendar.pending, (state) => {
-        state.pending = true
-      })
-      .addCase(getCalendar.fulfilled, (state, { payload }) => {
-        state.calendar.year = payload.year
-        state.calendar.month = payload.month
-        state.calendar.week = payload.week
-        state.pending = false
-      })
-      .addCase(getCalendar.rejected, (state) => {
-        state.pending = false
-        state.error = true
-      })
   },
 })
 

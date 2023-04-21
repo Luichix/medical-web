@@ -1,14 +1,22 @@
-import React, { ReactElement, useContext, useRef, useState } from 'react'
+import React, {
+  ReactElement,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import Layout from '@Components/layouts/Dashboard'
 import { ThemeContext } from '@Contexts/index'
-import { headers } from 'public/data/patient-dummies'
-import { Table, Search } from 'ui'
+import { CONSULT_HEADERS_DUMMIES } from 'public/data/patient-dummies'
+import { Table, Search, Paginate } from 'ui'
 import classNames from 'classnames'
 import styles from './clinical.module.css'
 import { useSelector } from 'react-redux'
-import getStore, { RootState } from '@/store/store'
+import getStore, { RootState, useAppDispatch } from '@/store/store'
 import { getClinical } from '@/store/slices/clinical.slice'
 import { Summary } from '@/interfaces/state'
+import { BsPerson } from 'react-icons/bs'
+import { setSearch } from '@/store/slices/clinical.slice'
 
 const transformClinicalPatient = (data: Summary[]) => {
   return data
@@ -23,34 +31,52 @@ const getHead = (data: any) => {
   return head
 }
 
-const head = getHead(headers.es)
+const head = getHead(CONSULT_HEADERS_DUMMIES.es)
 
 const ClinicalPage = () => {
   const { theme } = useContext(ThemeContext)
-  const [look, setLook] = useState('')
+
+  const dispatch = useAppDispatch()
 
   const clinicalRecords = useSelector((state: RootState) => state.clinical)
-  const records = transformClinicalPatient(clinicalRecords.filteredPatient)
+  const searchPatient = clinicalRecords.search
+  const patientFiltered = transformClinicalPatient(
+    clinicalRecords.filteredPatient
+  )
+
+  const [patient, setPatient] = useState(patientFiltered)
+
+  useEffect(() => {
+    setPatient(patientFiltered)
+  }, [searchPatient, patientFiltered])
 
   return (
     <div className={classNames(styles.container, styles[theme])}>
       <div className={styles.searchContainer}>
-        <Search placeholder="Buscar paciente" value={look} onChange={setLook} />
+        <Search
+          placeholder="Buscar paciente"
+          value={searchPatient}
+          onChange={(value) => {
+            dispatch(setSearch(value))
+          }}
+        />
         <div className={styles.buttonsContainer}>
-          <button className={styles.secundaryButton}>ID Paciente</button>
-          <button className={styles.primaryButton}>Nuevo</button>
+          <button className={styles.primaryButton}>
+            <BsPerson /> &nbsp; Añadir Paciente
+          </button>
         </div>
       </div>
 
       <div className={styles.tableContainer}>
         <Table
           headers={head}
-          records={records}
+          records={patient}
           theme={theme}
           href="/clinical/patient/"
           style={styles.table}
         />
       </div>
+      <Paginate data={patientFiltered} setData={setPatient} itemsPerPage={5} />
     </div>
   )
 }

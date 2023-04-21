@@ -2,35 +2,30 @@ import { FC, Fragment, useEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
 import styles from './Weekly.module.css'
 
-interface OtherProperties {
-  dayName?: string
+interface ExtraProperties {
   isCurrentMonth?: boolean
   isCurrentWeek?: boolean
 }
 
-export interface NewDay extends OtherProperties {
+export interface Days extends ExtraProperties {
+  uuid: string
+  parentWeekUuid: string
   dayweek: number
-  daymonth: number
+  daymonth: string
   date: string
   month: number
   isToday: boolean
   events: []
 }
 
-export interface IDays {
-  uuid: string
-  parentWeekUuid: string
-  day: string
-  weekday: number
-  ISO: string
+export interface Week {
+  weekUuid: string
   weekIndex: number
-  index: number
-  isToday?: boolean
-  isWeekend?: boolean
+  days: Days[]
 }
 
 interface EventsProps {
-  days: NewDay[]
+  days: Days[]
   dayweekActive: number
 }
 
@@ -64,12 +59,12 @@ const HOURS = [
 ]
 
 export interface WeeklyProps {
-  days: NewDay[]
+  week: Week
   onClick: () => void
   ListEvent?: FC<EventsProps>
 }
 
-export const Weekly = ({ days, onClick, ListEvent }: WeeklyProps) => {
+export const Weekly = ({ week, onClick, ListEvent }: WeeklyProps) => {
   const container = useRef<HTMLDivElement>(null)
   const containerNav = useRef<HTMLDivElement>(null)
   const containerOffset = useRef<HTMLDivElement>(null)
@@ -94,7 +89,7 @@ export const Weekly = ({ days, onClick, ListEvent }: WeeklyProps) => {
         <div className={styles.section}>
           <div ref={containerNav} className={styles.nav}>
             <div className={styles.columnMobile}>
-              {days.map(({ daymonth, dayweek, isToday }, index) => (
+              {week.days.map(({ daymonth, dayweek, isToday }, index) => (
                 <button
                   key={index}
                   type="button"
@@ -114,7 +109,7 @@ export const Weekly = ({ days, onClick, ListEvent }: WeeklyProps) => {
             </div>
             <div className={classNames(styles.columnDesktop)}>
               <div className={styles.columnDesktopEnd} />
-              {days.map(({ daymonth, dayweek, isToday }, index) => (
+              {week.days.map(({ daymonth, dayweek, isToday }, index) => (
                 <div key={index} className={styles.dayContainer}>
                   <span className={classNames({ [styles.dayItem]: isToday })}>
                     {DAYS_TEXT_WEEK[dayweek]}
@@ -161,7 +156,7 @@ export const Weekly = ({ days, onClick, ListEvent }: WeeklyProps) => {
               </div>
               {/* Events */}
               {ListEvent && (
-                <ListEvent days={days} dayweekActive={dayweekActive} />
+                <ListEvent days={week.days} dayweekActive={dayweekActive} />
               )}
             </div>
           </div>

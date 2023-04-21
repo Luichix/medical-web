@@ -4,13 +4,10 @@ import classNames from 'classnames'
 import { ThemeContext } from '@Contexts/index'
 import { Sidenav } from 'ui'
 import Link from 'next/link'
-import { GiHamburgerMenu, GiHistogram } from 'react-icons/gi'
-import {
-  AiOutlineAppstoreAdd,
-  AiTwotoneCalendar,
-  AiOutlineSearch,
-} from 'react-icons/ai'
+import { AiOutlineAppstoreAdd, AiTwotoneCalendar } from 'react-icons/ai'
 import { CgLogOut } from 'react-icons/cg'
+import { BsPersonBadge } from 'react-icons/bs'
+import { BiTask } from 'react-icons/bi'
 
 const routes = {
   logout: {
@@ -19,15 +16,15 @@ const routes = {
     id: 'navBarlogout',
   },
   find: {
-    route: 'Buscar',
+    route: 'Gestión de pacientes',
     ref: '/clinical',
   },
   calendar: {
-    route: 'Calendario',
+    route: 'Calendario de citas',
     ref: '/calendars',
   },
   activities: {
-    route: 'Actividades',
+    route: 'Gestión de tareas',
     ref: '/activities',
   },
 }
@@ -42,7 +39,7 @@ export const DashboardLayout = ({ children }: { children: ReactNode }) => {
         <Sidenav show={showNav} onClick={() => setShowNav(!showNav)}>
           <Link href={routes.activities.ref} className={styles.group}>
             <i className={classNames(styles.item, styles.colorSky)}>
-              <AiOutlineAppstoreAdd />
+              <BiTask />
             </i>
             <span className={styles.link}>{routes.activities.route}</span>
           </Link>
@@ -54,7 +51,7 @@ export const DashboardLayout = ({ children }: { children: ReactNode }) => {
           </Link>
           <Link href={routes.find.ref} className={styles.group}>
             <i className={classNames(styles.item, styles.colorSky)}>
-              <AiOutlineSearch />
+              <BsPersonBadge />
             </i>
             <span className={styles.link}>{routes.find.route}</span>
           </Link>

@@ -4,56 +4,34 @@ import classNames from 'classnames'
 
 const DAYS_TEXT_WEEK = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
 
-interface OtherProperties {
-  dayName?: string
+interface ExtraProperties {
   isCurrentMonth?: boolean
   isCurrentWeek?: boolean
 }
 
-export interface NewDay extends OtherProperties {
+export interface Days extends ExtraProperties {
+  uuid: string
+  parentWeekUuid: string
   dayweek: number
-  daymonth: number
+  daymonth: string
   date: string
   month: number
   isToday: boolean
-  events: any
+  events: []
 }
 
-type NewWeek = NewDay[]
-
-type NewMonth = NewWeek[]
-
-export interface IDays {
-  index: number
-  uuid: string
-  day: string
-  weekday: number
-  weekIndex: number
-  ISO: string
-  parentWeekUuid: string
-  isToday?: boolean
-  isWeekend?: boolean
-}
-
-export interface IWeek {
-  index: number
-  weekIndex: number
+export interface Week {
   weekUuid: string
-  days: IDays[]
+  weekIndex: number
+  days: Days[]
 }
 
-type Year = Record<number, IWeek[]>
+// interface EventsProps {
+//   days: Days[]
+//   dayweekActive: number
+// }
 
-export interface Calendar {
-  selectedDate: string
-  currentMonthIndex: number
-  week: IWeek
-  month: IWeek[]
-  year: Year
-  currentYear: number
-  currentMonth: number
-  currentWeek: number
-}
+type Month = Week[]
 
 interface EventsProps {
   ISO: string
@@ -61,7 +39,7 @@ interface EventsProps {
 }
 
 export interface MonthProps {
-  month: NewMonth
+  month: Month
   onClick: () => void
   ListEvent?: FC<EventsProps>
 }
@@ -84,7 +62,7 @@ export const Month = ({ ListEvent, onClick, month }: MonthProps) => {
         month.map((weeks, index) => (
           <div key={index} className={styles.weekContainer}>
             {weeks &&
-              weeks.map(
+              weeks.days.map(
                 ({ daymonth, dayweek, isToday, date, events }, index) => (
                   <div
                     key={index}

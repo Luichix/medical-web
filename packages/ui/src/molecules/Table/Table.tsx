@@ -5,14 +5,16 @@ import Column from './Column'
 import Row from './Row'
 
 export function Table({ headers, records, theme, style, href }: any) {
-  const orderRecords = records.map((record: any) => {
-    return headers.map((item: any) => {
-      return {
-        value: record[item.field],
-        type: item.type,
-      }
+  const orderRecords =
+    records &&
+    records.map((record: any) => {
+      return headers.map((item: any) => {
+        return {
+          value: record[item.field],
+          type: item.type,
+        }
+      })
     })
-  })
 
   return (
     <div className={styles.container}>
@@ -25,16 +27,29 @@ export function Table({ headers, records, theme, style, href }: any) {
           />
         </thead>
         <tbody className={styles.bodyTable}>
-          {orderRecords.map((record: any, index: any) => {
-            return (
-              <Row
-                key={index}
-                records={record}
-                styles={styles.td}
-                href={href}
-              />
-            )
-          })}
+          {orderRecords ? (
+            orderRecords.map((record: any, index: any) => {
+              return (
+                <Row
+                  key={index}
+                  records={record}
+                  styles={styles.td}
+                  href={href}
+                />
+              )
+            })
+          ) : (
+            <td
+              style={{
+                height: '50px',
+                textAlign: 'center',
+                color: '#545454',
+              }}
+              colSpan={headers.length ?? 0}
+            >
+              No se encontraron registros
+            </td>
+          )}
         </tbody>
       </table>
     </div>

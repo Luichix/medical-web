@@ -24,9 +24,30 @@ function Calendar() {
 
   const dispatch = useAppDispatch()
 
-  const calendar = useSelector((state: RootState) => state.calendar.calendar)
+  const calendar = useSelector((state: RootState) => state.calendar)
 
-  const date = dayjs(calendar.selectedDate).locale('es').format('MMMM YYYY')
+  const currentDate = dayjs()
+    .clone()
+    .set('year', calendar.currentYear)
+    .set('month', calendar.currentMonth)
+    .locale('es')
+    .format('MMMM YYYY')
+
+  const indexWeek = calendar.week.weekIndex
+
+  const startWeek = dayjs()
+    .year(calendar.currentYear)
+    .week(indexWeek)
+    .startOf('week')
+    .format('DD/MM/YYYY')
+  const endWeek = dayjs()
+    .year(calendar.currentYear)
+    .week(indexWeek)
+    .endOf('week')
+    .format('DD/MM/YYYY')
+
+  const date =
+    view === 'week' ? `Semana ${indexWeek} - ${currentDate}` : currentDate
   /* --------------------------------- handler -------------------------------- */
 
   const handlePreviousTimer = () => {
@@ -121,7 +142,7 @@ function Calendar() {
       <div>
         {view === 'week' && (
           <Weekly
-            days={calendar.week}
+            week={calendar.week}
             onClick={openModal}
             ListEvent={WeekEvents}
           />

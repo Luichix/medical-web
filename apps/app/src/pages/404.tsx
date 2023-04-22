@@ -9,77 +9,24 @@ function Page404() {
   return (
     <>
       <div className="container">
-        <header className="header">
-          <Link href="/" title={'logo'} />
-        </header>
         <main className="main">
-          <figure className="figure">
-            {/* <Image alt="cover" src={ocError} className="image" /> */}
-          </figure>
           <div className="section">
             <p className="text">Oops! Looks like you followed a bad link.</p>
-            <p className="text">
-              If you think this is a problem with us, please{' '}
-              <Link href="/" className="link" title={'tell us...'} />
-            </p>
           </div>
-          <Link href="/" title="Go back home"></Link>
+          <Link href="/" title="Go back home">
+            <span className="link">Regresar a la App</span>
+          </Link>
         </main>
-        <footer className="footer">
-          <div className="section">
-            <p className="rigth">&copy; Godigit - 2022 </p>
-          </div>
-
-          <div className="section">
-            <ul className="list">
-              <li className="item">
-                <a href="/" target="_blank" rel="noreferrer">
-                  <NoSsr>
-                    <BsFacebook className="icon" />
-                  </NoSsr>
-                </a>
-              </li>
-              <li className="item">
-                <a href="/" target="_blank" rel="noreferrer">
-                  <NoSsr>
-                    <BsTwitter className="icon" />
-                  </NoSsr>
-                </a>
-              </li>
-              <li className="item">
-                <a href="/" target="_blank" rel="noreferrer">
-                  <NoSsr>
-                    <BsWhatsapp className="icon" />
-                  </NoSsr>
-                </a>
-              </li>
-              <li className="item">
-                <a href="/" target="_blank" rel="noreferrer">
-                  <NoSsr>
-                    <BsInstagram className="icon" />
-                  </NoSsr>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </footer>
       </div>
       <style jsx>{`
         .container {
+          font-family: 'Roboto';
           width: 100%;
           height: 100%;
           min-height: 100vh;
           display: flex;
           flex-direction: column;
           justify-content: center;
-        }
-        .header {
-          width: 100%;
-          display: flex;
-          justify-content: flex-start;
-          padding: var(--spacing-md);
-          position: absolute;
-          top: 0;
         }
         .main {
           display: flex;
@@ -90,59 +37,21 @@ function Page404() {
           height: 100%;
           padding: var(--spacing-xl);
         }
-        .figure {
-          width: 100%;
-          max-width: 500px;
-          height: 100%;
-          padding: var(--spacing-md);
-        }
-        .image {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
         .section {
           width: 100%;
           max-width: 500px;
           padding: var(--spacing-xl);
+          padding: 10px;
         }
         .text {
           text-align: center;
-          font-size: 1.1rem;
-          color: var(--color-font-base);
+          font-size: 1.2rem;
+          color: var(--color-primary);
         }
         .link {
-          color: var(--color-primary);
+          color: var(--color-primary-highlight);
           text-decoration: none;
           font-weight: var(--font-weight-semibold);
-        }
-        .footer {
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-        }
-        .rigth {
-          font-size: 1.2rem;
-          color: var(--color-primary);
-          text-decoration: none;
-          font-weight: var(--font-weight-semibold);
-        }
-        .list {
-          display: flex;
-          justify-content: flex-end;
-          gap: 1rem;
-        }
-        .item {
-          padding: var(--spacing-xs);
-          color: var(--color-base-white);
-          font-size: 1.2rem;
-          background-color: var(--color-font-base);
-          display: flex;
-          align-items: center;
-          border-radius: var(--border-radius-xs);
-          line-height: 0;
         }
       `}</style>
     </>

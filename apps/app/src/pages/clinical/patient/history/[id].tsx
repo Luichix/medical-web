@@ -9,7 +9,6 @@ import Layout from '@/components/layouts/Clinical'
 const HistoryPage = () => {
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Datos de identidad personal</h3>
       <History />
     </div>
   )

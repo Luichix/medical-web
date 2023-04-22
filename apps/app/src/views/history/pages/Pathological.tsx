@@ -16,12 +16,12 @@ export const PathologicalPage = ({ timeline }: any) => {
       <div className={styles.collection}>
         <Timeline events={timeline} />
       </div>
-      <Container
+      {/* <Container
         title="Antecedentes patológicos"
         subtitle="Esta sección es una linea del tiempo con las enfermedades que el paciente ha padecido con anterioridad."
       >
         <CardItem Icon={MdAccessibility} />
-      </Container>
+      </Container> */}
     </Titles>
   )
 }

@@ -50,20 +50,8 @@ const Consult = () => {
           <Prescription />
         </Modal>
       </NoSSR>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          width: '100%',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '400px',
-          }}
-        >
+      <div>
+        <div className={styles.titles}>
           <Title size="md">Evaluación del paciente</Title>
           <Paragraph size="xs">
             Si se pudiese, es necesario llenar esta sección en cada cita, para

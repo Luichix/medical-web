@@ -1,4 +1,4 @@
-import { Consultation } from './consult'
+import { Consultation, ConsultationRecord } from './consult'
 import { Reminder } from './event'
 
 export interface User {
@@ -32,9 +32,9 @@ export interface Summary {
 }
 
 export type ConsultState = {
-  consult: Consultation[]
+  consult: ConsultationRecord[]
   search: string
-  filteredConsult: Consultation[]
+  filteredConsult: ConsultationRecord[]
   pending: boolean
   error: boolean
 }

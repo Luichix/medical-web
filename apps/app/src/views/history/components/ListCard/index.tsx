@@ -25,7 +25,7 @@ export const ListCard = ({
             onDelete={() => onDelete(item.id)}
             onUpdate={() => onUpdate(item)}
           />
-          <Card color="none" size="md" direction="horizontal" dimension="none">
+          <Card color="none" size="md" direction="vertical" dimension="none">
             <div className={styles.icon}>
               <MdMedicalServices />
             </div>

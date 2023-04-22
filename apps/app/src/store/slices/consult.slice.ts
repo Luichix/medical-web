@@ -2,11 +2,12 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { PayloadAction } from '@reduxjs/toolkit'
 import { ConsultState } from '@/interfaces/state'
 import ConsultAPI from '@/pages/api/Consult'
+import { CONSULT_DATA_DUMMIES } from '@Data/patient-dummies'
 
 const initialState: ConsultState = {
-  consult: [],
+  consult: CONSULT_DATA_DUMMIES,
   search: '',
-  filteredConsult: [],
+  filteredConsult: CONSULT_DATA_DUMMIES,
   pending: false,
   error: false,
 }
@@ -25,7 +26,7 @@ const consultSlice = createSlice({
     setSearch(state, action: PayloadAction<string>) {
       state.search = action.payload
       state.filteredConsult = state.consult.filter((record) =>
-        record._id.includes(state.search.toLowerCase())
+        record.title.toLowerCase().includes(state.search.toLowerCase())
       )
     },
     addConsult(state, action) {

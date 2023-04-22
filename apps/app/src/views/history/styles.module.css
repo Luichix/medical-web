@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  padding: 4rem;
+  /* padding: 4rem; */
   font-family: var(--font-family-roboto);
   display: flex;
   flex-direction: column;

@@ -13,9 +13,9 @@
  */
 
 .container {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
+  width: 100%;
+  padding: 4rem;
+  font-family: var(--font-family-roboto);
 }
 
 .section {

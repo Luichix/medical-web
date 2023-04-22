@@ -73,7 +73,7 @@ export interface HeritageHistory {
   hierarchy: string
   name: string
   disease: string
-  patient: false
+  patient: boolean
   description: string
   id: string
 }

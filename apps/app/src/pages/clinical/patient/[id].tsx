@@ -33,15 +33,19 @@ const PatientPage = () => {
 
   const dispatch = useAppDispatch()
 
+  const patient = useSelector((state: RootState) =>
+    state.clinical.patient.find((element) => element._id === id)
+  )
+
   const consultRecords = useSelector((state: RootState) => state.consult)
   const searchConsult = consultRecords.search
-  const consultFiltered = interceptorConsult(consultRecords.filteredConsult)
+  const consultFiltered = consultRecords.filteredConsult
 
   const [consult, setConsult] = useState(consultFiltered)
 
   useEffect(() => {
     setConsult(consultFiltered)
-  }, [searchConsult, consultFiltered])
+  }, [consultFiltered])
 
   return (
     <div className={classNames(styles.container, styles[theme])}>
@@ -59,9 +63,9 @@ const PatientPage = () => {
             </figure>
             <div>
               <Title size="xs" color="base">
-                Luis Reynaldo
+                {patient?.patient}
               </Title>
-              <Paragraph size="xs"> PID: {id}</Paragraph>
+              <Paragraph size="xxs"> PID: {id}</Paragraph>
             </div>
           </div>
           <div className={styles.actions}>
@@ -102,6 +106,7 @@ const PatientPage = () => {
           href="/clinical/patient/history/"
         />
       </div>
+      <Paginate data={consultFiltered} setData={setConsult} itemsPerPage={5} />
     </div>
   )
 }

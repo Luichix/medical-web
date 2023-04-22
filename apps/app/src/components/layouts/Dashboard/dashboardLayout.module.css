@@ -4,6 +4,7 @@
   position: relative;
   transition: background-color 0.5s ease-in-out;
   font-family: var(--font-family-roboto);
+  height: 100%;
 }
 
 /* -------------------------------- container ------------------------------- */
@@ -12,12 +13,14 @@
   display: flex;
   flex-direction: row;
   background-color: transparent;
+  height: 100%;
 }
 
 .main {
   position: relative;
   display: flex;
   flex-grow: 1;
+  height: 100%;
 }
 
 /* ---------------------------------- theme --------------------------------- */

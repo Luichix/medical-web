@@ -48,7 +48,7 @@ const ClinicalPage = () => {
 
   useEffect(() => {
     setPatient(patientFiltered)
-  }, [searchPatient, patientFiltered])
+  }, [patientFiltered])
 
   return (
     <div className={classNames(styles.container, styles[theme])}>

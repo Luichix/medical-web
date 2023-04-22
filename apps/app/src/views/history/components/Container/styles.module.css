@@ -1,8 +1,8 @@
 .container {
   display: flex;
   gap: 40px;
-  background: #f3f4f6;
-  padding: 60px;
+  /* background: #f3f4f6; */
+  /* padding: 60px; */
 }
 
 .section {

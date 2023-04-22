@@ -1,103 +1,112 @@
+import {
+  Consultation,
+  Identifier,
+  LaboratoryItem,
+  LaboratoryOrder,
+  Prescription,
+  PrescriptionItem,
+  RecordConsultation,
+  Treatment,
+  TreatmentItem,
+} from '@/interfaces/consult'
 import { Summary } from '@/interfaces/state'
 import { Patient } from '@Interfaces/patient'
 
-const fecha = new Date()
+/* ----------------------- PATIENT INFORMATION DUMMIES ---------------------- */
 
-export const initialStatePatient: Patient[] = [
-  {
-    _id: '63ddca24cd853ef903500097',
-    uid: 'string',
-    registrationDate: '2023-02-08T02:45:48.705458',
-    patientInformation: {
-      basicInformation: {
-        name: 'Luichix',
-        lastName: 'Rex',
-        birthDate: '2023-02-08',
-        sex: 'M',
-        maritalStatus: 'single',
-        ethnicity: 'unknown',
-      },
-      ocupationAndLifeStyle: {
-        workingHours: 8,
-        recreationTime: 4,
-        doExercises: false,
-        exercicesFrequency: 'gym',
-        typeofExcercices: '',
-      },
-      sanitaryServices: {
-        description: '',
-      },
+export const PATIENT_INFORMATION_DUMMIES: Patient = {
+  _id: '63ddca24cd853ef903500097',
+  uid: 'ABC1234',
+  registrationDate: '2023-03-15T13:22:11.123456',
+  patientInformation: {
+    basicInformation: {
+      name: 'Juan',
+      lastName: 'Gómez',
+      birthDate: '1985-06-10',
+      sex: 'M',
+      maritalStatus: 'married',
+      ethnicity: 'Hispanic',
     },
-    clinicalRecord: {
-      annotations: [
-        {
-          text: '',
-          id: '0e947ca8-2f32-4ccf-938f-af258a705fb2',
-        },
-      ],
-      bloodTransfusion: [
-        {
-          title: '',
-          description: '',
-          type: '',
-          level: '',
-          date: '2023-02-08T02:45:48.583505',
-          id: 'b531536c-e7a1-42c2-ac7e-61b530e6e3c9',
-        },
-      ],
-      drugReaction: [
-        {
-          title: '',
-          description: '',
-          id: '2c34654e-60b2-485a-892b-add8dc570b01',
-        },
-      ],
-      habits: [
-        {
-          title: '',
-          description: '',
-          id: 'd12edeb2-58e6-49e5-9b7e-3ecd31c101cf',
-        },
-      ],
-      heritageHistory: [
-        {
-          hierarchy: '',
-          name: '',
-          disease: '',
-          patient: false,
-          description: '',
-          id: 'd0a45a80-45b2-4b08-bc88-ee30e6d94a16',
-        },
-      ],
-      pathologicalHistory: [
-        {
-          date: '2023-02-08T02:45:48.645350',
-          title: '',
-          id: '31882079-a134-4a07-ac2f-5d0fb52c8225',
-        },
-      ],
-      surgicalIntervention: [
-        {
-          title: '',
-          description: '',
-          date: '2023-02-08T02:45:48.658628',
-          id: 'c635aa67-1dc9-4c20-bfce-aa37f22b95a6',
-        },
-      ],
-      trauma: [
-        {
-          title: '',
-          description: '',
-          type: '',
-          level: '',
-          date: '2023-02-08T02:45:48.672999',
-          fileURL: '',
-          id: 'b10c4708-f75a-47e9-9d7e-a45072f2bc39',
-        },
-      ],
+    ocupationAndLifeStyle: {
+      workingHours: 9,
+      recreationTime: 2,
+      doExercises: true,
+      exercicesFrequency: 'twice a week',
+      typeofExcercices: 'jogging, weightlifting',
+    },
+    sanitaryServices: {
+      description: 'No current medical conditions',
     },
   },
-]
+  clinicalRecord: {
+    annotations: [
+      {
+        text: 'Patient presented with flu-like symptoms',
+        id: '0e947ca8-2f32-4ccf-938f-af258a705fb2',
+      },
+    ],
+    bloodTransfusion: [
+      {
+        title: 'Blood transfusion after surgery',
+        description: 'Received 2 units of blood',
+        type: 'Whole blood',
+        level: 'Moderate',
+        date: '2022-11-05T08:10:00.000Z',
+        id: 'b531536c-e7a1-42c2-ac7e-61b530e6e3c9',
+      },
+    ],
+    drugReaction: [
+      {
+        title: 'Allergic reaction to penicillin',
+        description: 'Developed hives and difficulty breathing',
+        id: '2c34654e-60b2-485a-892b-add8dc570b01',
+      },
+    ],
+    habits: [
+      {
+        title: 'Smoking',
+        description: 'Smokes 10 cigarettes per day',
+        id: 'd12edeb2-58e6-49e5-9b7e-3ecd31c101cf',
+      },
+    ],
+    heritageHistory: [
+      {
+        hierarchy: 'Father',
+        name: 'Luis Gómez',
+        disease: 'Type 2 diabetes',
+        patient: true,
+        description: 'Father diagnosed at age 45',
+        id: 'd0a45a80-45b2-4b08-bc88-ee30e6d94a16',
+      },
+    ],
+    pathologicalHistory: [
+      {
+        date: '2020-01-05T14:30:00.000Z',
+        title: 'Appendectomy',
+        id: '31882079-a134-4a07-ac2f-5d0fb52c8225',
+      },
+    ],
+    surgicalIntervention: [
+      {
+        title: 'Knee surgery',
+        description: 'Arthroscopic surgery to repair torn meniscus',
+        date: '2015-06-20T09:00:00.000Z',
+        id: 'c635aa67-1dc9-4c20-bfce-aa37f22b95a6',
+      },
+    ],
+    trauma: [
+      {
+        title: 'Car accident',
+        description: 'Suffered minor injuries',
+        type: 'Motor vehicle accident',
+        level: 'Mild',
+        date: '2010-03-10T18:15:00.000Z',
+        fileURL: '',
+        id: 'b10c4708-f75a-47e9-9d7e-a45072f2bc39',
+      },
+    ],
+  },
+}
 
 /* --------------------------- CLINIC DUMMIES -------------------------- */
 
@@ -230,7 +239,7 @@ export const CLINIC_DATA_DUMMIES: Summary[] = [
 
 export const CONSULT_HEADERS_DUMMIES = {
   es: [
-    { field: 'consultID', name: 'Id Consulta', type: 'link' },
+    { field: '_id', name: 'Id Consulta', type: 'string' },
     { field: 'title', name: 'Motivo', type: 'string' },
     { field: 'date', name: 'Fecha', type: 'string' },
     { field: 'laboratoryOrder', name: 'Examenes', type: 'string' },
@@ -239,9 +248,9 @@ export const CONSULT_HEADERS_DUMMIES = {
   ],
 }
 
-const CONSULT_DATA_DUMMIES = [
+export const CONSULT_DATA_DUMMIES = [
   {
-    _id: 1,
+    _id: '1',
     title: 'Dolor de cabeza',
     date: '2023-04-20',
     laboratoryOrder: 'Examen físico y neurológico',
@@ -249,7 +258,7 @@ const CONSULT_DATA_DUMMIES = [
     treatment: 'Reposo y seguimiento médico',
   },
   {
-    _id: 2,
+    _id: '2',
     title: 'Fiebre',
     date: '2023-04-21',
     laboratoryOrder: 'Examen físico general',
@@ -257,7 +266,7 @@ const CONSULT_DATA_DUMMIES = [
     treatment: 'Hidratación y seguimiento médico',
   },
   {
-    _id: 3,
+    _id: '3',
     title: 'Tos persistente',
     date: '2023-04-18',
     laboratoryOrder: 'Radiografía de tórax',
@@ -265,7 +274,7 @@ const CONSULT_DATA_DUMMIES = [
     treatment: 'Reposo y seguimiento médico',
   },
   {
-    _id: 4,
+    _id: '4',
     title: 'Dolor abdominal',
     date: '2023-04-16',
     laboratoryOrder: 'Examen físico y ecografía abdominal',
@@ -273,6 +282,83 @@ const CONSULT_DATA_DUMMIES = [
     treatment: 'Dieta blanda y seguimiento médico',
   },
 ]
+
+/* ------------------------- CONSULT RECORD DUMMIES ------------------------- */
+
+// PrescriptionItem
+const prescriptionItemExample: PrescriptionItem = {
+  id: 'p123',
+  title: 'Ibuprofen',
+  description: 'Take two pills twice a day after meals',
+}
+
+// Prescription
+const prescriptionExample: Prescription = {
+  id: 'pr456',
+  date: '2023-04-22',
+  title: 'Pain Management',
+  prescriptionItem: [prescriptionItemExample],
+}
+
+// LaboratoryItem
+const laboratoryItemExample: LaboratoryItem = {
+  id: 'l789',
+  title: 'Blood Test',
+  description: 'Check blood count and cholesterol levels',
+  url: 'https://example.com/labresults',
+}
+
+// LaboratoryOrder
+const laboratoryOrderExample: LaboratoryOrder = {
+  id: 'lo101',
+  patient: 'John Doe',
+  date: '2023-04-20',
+  title: 'Lab Order',
+  laboratoryItem: [laboratoryItemExample],
+}
+
+// TreatmentItem
+const treatmentItemExample: TreatmentItem = {
+  id: 't123',
+  title: 'Physical Therapy',
+  description: 'Stretching exercises for lower back pain',
+}
+
+// Treatment
+const treatmentExample: Treatment = {
+  id: 'tr456',
+  patient: 'Jane Doe',
+  date: '2023-04-19',
+  title: 'Back Pain Treatment',
+  treatmentItem: [treatmentItemExample],
+}
+
+// RecordConsultation
+const recordConsultationExample: RecordConsultation = {
+  uid: 'rc123',
+  title: 'Back Pain Consultation',
+  notes: 'Patient complains of lower back pain',
+  medicalImpression: 'Muscle strain',
+  diagnostic: 'X-ray showed no abnormalities',
+  treatment: treatmentExample,
+  laboratoryOrder: laboratoryOrderExample,
+  prescription: prescriptionExample,
+  date: '2023-04-18',
+}
+
+// Identifier
+const identifierExample: Identifier = {
+  clinic: 'ABC Medical Center',
+}
+
+// Consultation
+export const consultationExample: Consultation = {
+  _id: 'c001',
+  identifier: identifierExample,
+  record: recordConsultationExample,
+}
+
+/* --------------------------------- OTHERS --------------------------------- */
 
 export const traumaRecords = [
   {

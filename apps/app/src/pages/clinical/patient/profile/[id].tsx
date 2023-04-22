@@ -9,46 +9,80 @@ import {
 import { useSelector } from 'react-redux'
 import getStore, { RootState } from '@Store/store'
 import { getPatient } from '@Store/slices/patient.slice'
-import { Form, FormValues, useForm } from 'ui'
+import { Form, FormValues, List, useForm } from 'ui'
 import { GetServerSideProps } from 'next'
 
 const ProfilePage = () => {
   const patient = useSelector((state: RootState) => state.patient.patient)
 
-  const onSubmit = (values: FormValues) => {
-    console.log(values)
+  const convertLit = (data: Record<string, any>) => {
+    let newArray = []
+
+    for (const [key, value] of Object.entries(data)) {
+      newArray.push({ label: key, value: value })
+    }
+
+    return newArray
   }
 
-  const insertInitialValues = (elements: any, initialValues: any) => {
-    return elements.map((element: any) => {
-      return {
-        ...element,
-        value: initialValues[element.name],
-      }
-    })
-  }
+  // const onSubmit = (values: FormValues) => {
+  //   console.log(values)
+  // }
 
-  const elementsProfile = insertInitialValues(
-    INPUTS_PROFILE,
-    patient?.patientInformation.basicInformation
-  )
-  const elementsOccupation = insertInitialValues(
-    INPUTS_OCCUPATION,
+  // const insertInitialValues = (elements: any, initialValues: any) => {
+  //   return elements.map((element: any) => {
+  //     return {
+  //       ...element,
+  //       value: initialValues[element.name],
+  //     }
+  //   })
+  // }
+
+  // const elementsProfile = insertInitialValues(
+  //   INPUTS_PROFILE,
+  //   patient?.patientInformation.basicInformation
+  // )
+  // const elementsOccupation = insertInitialValues(
+  //   INPUTS_OCCUPATION,
+  //   patient?.patientInformation.ocupationAndLifeStyle
+  // )
+  // const elementsSanitary = insertInitialValues(
+  //   INPUTS_CONDITION,
+  //   patient?.patientInformation.sanitaryServices
+  // )
+
+  // const formProfile = useForm(onSubmit, elementsProfile)
+  // const formOccupation = useForm(onSubmit, elementsOccupation)
+  // const formSanitary = useForm(onSubmit, elementsSanitary)
+
+  const profile = convertLit(patient?.patientInformation.basicInformation)
+  const occupation = convertLit(
     patient?.patientInformation.ocupationAndLifeStyle
   )
-  const elementsSanitary = insertInitialValues(
-    INPUTS_CONDITION,
-    patient?.patientInformation.sanitaryServices
-  )
-
-  const formProfile = useForm(onSubmit, elementsProfile)
-  const formOccupation = useForm(onSubmit, elementsOccupation)
-  const formSanitary = useForm(onSubmit, elementsSanitary)
+  const condition = convertLit(patient?.patientInformation.sanitaryServices)
 
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>Datos de identidad personal</h3>
-      <Form
+      <List
+        id="profile"
+        title="Perfil del paciente"
+        subtitle="La información que se presenta a continuación es el perfil privado del paciente"
+        record={profile}
+      />
+      <List
+        id="occupation"
+        title="Ocupación y estilo de vida"
+        subtitle="En esta sección se presenta la ocupación del paciente y su estilo devida"
+        record={occupation}
+      />
+      <List
+        id="conditions"
+        title="Condiciones higuienico-sanitarias de la vivienda"
+        subtitle="En esta sección se especifica el entorno en el recibe el paciente"
+        record={condition}
+      />
+      {/* <Form
         id="profile"
         title="Perfil del paciente"
         inputs={formProfile.inputs}
@@ -59,10 +93,10 @@ const ProfilePage = () => {
       <Form
         id="occupation"
         title="Ocupación y estilo de vida"
+        subtitle="En esta sección se presenta la ocupación del paciente y su estilo devida"
         inputs={formOccupation.inputs}
         handleChange={formOccupation.handleChange}
         handleSubmit={formOccupation.handleSubmit}
-        subtitle="En esta sección se presenta la ocupación del paciente y su estilo devida"
       />
       <Form
         id="conditions"
@@ -71,7 +105,7 @@ const ProfilePage = () => {
         inputs={formSanitary.inputs}
         handleChange={formSanitary.handleChange}
         handleSubmit={formSanitary.handleSubmit}
-      />
+      /> */}
     </div>
   )
 }

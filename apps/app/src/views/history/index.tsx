@@ -122,9 +122,8 @@ const History = () => {
         </Modal>
       </NoSSR>
       <div className={styles.container}>
-        <h3 className={styles.title}>History Remota</h3>
-
-        <AnnotationPage />
+        <h3 className={styles.title}>Historia Clínica</h3>
+        <AnnotationPage records={clinicalRecord?.annotations} />
         <PathologicalPage timeline={clinicalRecord?.pathologicalHistory} />
         <DrugReactionPage
           records={clinicalRecord?.drugReaction}

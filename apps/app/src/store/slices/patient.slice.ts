@@ -1,5 +1,5 @@
 import PatientData from '@/pages/api/Patient'
-import { initialStatePatient } from '@Data/patient-dummies'
+import { PATIENT_INFORMATION_DUMMIES } from '@Data/patient-dummies'
 import { Patient, TypeClinicalRecord } from '@Interfaces/patient'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
@@ -21,41 +21,7 @@ export enum ClinicalRecordEnum {
 }
 
 const initialState: PatientState = {
-  patient: {
-    _id: '',
-    uid: '',
-    registrationDate: '',
-    patientInformation: {
-      basicInformation: {
-        name: '',
-        lastName: '',
-        birthDate: '',
-        sex: '',
-        maritalStatus: '',
-        ethnicity: '',
-      },
-      ocupationAndLifeStyle: {
-        workingHours: 0,
-        recreationTime: 0,
-        doExercises: false,
-        exercicesFrequency: '',
-        typeofExcercices: '',
-      },
-      sanitaryServices: {
-        description: '',
-      },
-    },
-    clinicalRecord: {
-      annotations: [],
-      bloodTransfusion: [],
-      drugReaction: [],
-      habits: [],
-      heritageHistory: [],
-      pathologicalHistory: [],
-      surgicalIntervention: [],
-      trauma: [],
-    },
-  },
+  patient: PATIENT_INFORMATION_DUMMIES,
   pending: false,
   error: false,
 }
@@ -119,7 +85,7 @@ const patientsSlice = createSlice({
       })
       .addCase(getPatient.fulfilled, (state, { payload }) => {
         state.pending = false
-        state.patient = payload[0] ?? initialStatePatient[0]
+        state.patient = payload[0] ?? PATIENT_INFORMATION_DUMMIES
       })
       .addCase(getPatient.rejected, (state) => {
         state.pending = false

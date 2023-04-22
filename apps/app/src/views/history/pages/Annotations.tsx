@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { TextArea } from 'ui'
 import { Titles } from '../components'
 
-export const AnnotationPage = () => {
-  const [value, setValue] = useState('')
+export const AnnotationPage = ({ records }: any) => {
+  const [value, setValue] = useState(records[0].text)
 
   return (
     <Titles

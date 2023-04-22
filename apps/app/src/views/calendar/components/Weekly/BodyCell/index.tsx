@@ -5,6 +5,7 @@ import { useDrop } from 'react-dnd'
 import { Overlay } from '../../Overlay'
 import ReminderList from '../ReminderList'
 import styles from './styles.module.css'
+import { Days } from 'ui/src/organisms/Weekly/Weekly'
 
 const BodyCell = ({
   dayReminders,
@@ -12,8 +13,8 @@ const BodyCell = ({
   day,
 }: {
   dayReminders: Reminder[]
-  handleModal: (day: IDays) => void
-  day: IDays
+  handleModal: (day: Days) => void
+  day: Days
 }) => {
   // hook useDrop to collocate reminder label into list
   const [{ isOver }, drop] = useDrop(

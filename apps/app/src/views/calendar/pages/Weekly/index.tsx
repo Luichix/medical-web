@@ -8,6 +8,7 @@ import { RootState, useAppDispatch } from '@Store/store'
 import dayjs from 'dayjs'
 import { useSelector } from 'react-redux'
 import BodyCell from '../../components/Weekly/BodyCell'
+import { Days } from '../../utils/createCalendar'
 
 const Weekly = ({ onModal }: { onModal: () => void }) => {
   const dispatch = useAppDispatch()
@@ -17,8 +18,8 @@ const Weekly = ({ onModal }: { onModal: () => void }) => {
     return date.getHours() + date.getMinutes() / 60
   }
 
-  const handleModal = (day: IDays) => {
-    dispatch(updateSelectedDate(day.ISO))
+  const handleModal = (day: Days) => {
+    dispatch(updateSelectedDate(day.date))
     onModal()
   }
 
@@ -41,7 +42,7 @@ const Weekly = ({ onModal }: { onModal: () => void }) => {
               </td>
               {week.days.map((day, index) => {
                 const dayReminders = reminders.filter((reminder) => {
-                  const isSameDay = dayjs(reminder.date).isSame(day.ISO, 'day')
+                  const isSameDay = dayjs(reminder.date).isSame(day.date, 'day')
                   const startHour = getHour(dayjs(reminder.startDate).toDate())
                   const endHour = getHour(dayjs(reminder.endDate).toDate())
                   const isBetweenHours =

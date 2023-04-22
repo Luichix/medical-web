@@ -99,30 +99,21 @@ export const initialStatePatient: Patient[] = [
   },
 ]
 
-export const CONSULT_HEADERS_DUMMIES = {
+/* --------------------------- CLINIC DUMMIES -------------------------- */
+
+export const CLINIC_HEADERS_DUMMIES = {
   es: [
     { field: 'patient', name: 'Paciente', type: 'string' },
-    { field: '_id', name: 'ID Paciente', type: 'link' },
     { field: 'stage', name: 'Etapa', type: 'string' },
     { field: 'prescription', name: 'Receta', type: 'string' },
     { field: 'laboratoryOrder', name: 'Examenes', type: 'string' },
     { field: 'treatment', name: 'Tratamientos', type: 'string' },
     { field: 'opportunities', name: 'Oportunidades', type: 'string' },
+    { field: '_id', name: 'Registros', type: 'link' },
   ],
 }
 
-export const headersPatient = {
-  es: [
-    { field: 'consultID', name: 'ID Consulta', type: 'link' },
-    { field: 'issue', name: 'Motivo', type: 'string' },
-    { field: 'date', name: 'Fecha', type: 'string' },
-    { field: 'examn', name: 'Examenes', type: 'string' },
-    { field: 'prescription', name: 'Recetas', type: 'string' },
-    { field: 'treatment', name: 'Tratamiento', type: 'string' },
-  ],
-}
-
-export const CONSULT_DATA_DUMMIES: Summary[] = [
+export const CLINIC_DATA_DUMMIES: Summary[] = [
   {
     result: 0,
     client: '',
@@ -235,6 +226,54 @@ export const CONSULT_DATA_DUMMIES: Summary[] = [
   },
 ]
 
+/* -------------------------- CONSULT DUMMIES -------------------------- */
+
+export const CONSULT_HEADERS_DUMMIES = {
+  es: [
+    { field: 'consultID', name: 'Id Consulta', type: 'link' },
+    { field: 'title', name: 'Motivo', type: 'string' },
+    { field: 'date', name: 'Fecha', type: 'string' },
+    { field: 'laboratoryOrder', name: 'Examenes', type: 'string' },
+    { field: 'prescription', name: 'Recetas', type: 'string' },
+    { field: 'treatment', name: 'Tratamiento', type: 'string' },
+  ],
+}
+
+const CONSULT_DATA_DUMMIES = [
+  {
+    _id: 1,
+    title: 'Dolor de cabeza',
+    date: '2023-04-20',
+    laboratoryOrder: 'Examen físico y neurológico',
+    prescription: 'Ibuprofeno 400mg cada 6 horas',
+    treatment: 'Reposo y seguimiento médico',
+  },
+  {
+    _id: 2,
+    title: 'Fiebre',
+    date: '2023-04-21',
+    laboratoryOrder: 'Examen físico general',
+    prescription: 'Paracetamol 500mg cada 8 horas',
+    treatment: 'Hidratación y seguimiento médico',
+  },
+  {
+    _id: 3,
+    title: 'Tos persistente',
+    date: '2023-04-18',
+    laboratoryOrder: 'Radiografía de tórax',
+    prescription: 'Antibiótico amoxicilina-clavulanato',
+    treatment: 'Reposo y seguimiento médico',
+  },
+  {
+    _id: 4,
+    title: 'Dolor abdominal',
+    date: '2023-04-16',
+    laboratoryOrder: 'Examen físico y ecografía abdominal',
+    prescription: 'Analgésico y antiinflamatorio',
+    treatment: 'Dieta blanda y seguimiento médico',
+  },
+]
+
 export const traumaRecords = [
   {
     title: 'Fractura',
@@ -299,13 +338,4 @@ export const PRESCRIPTION_HEADERS = [
   { field: 'examn', name: 'Examenes', type: 'file' },
   { field: 'prescription', name: 'Recetas', type: 'file' },
   { field: 'treatment', name: 'Tratamientos', type: 'file' },
-]
-
-export const PATIENT_CONSULT_HEADERS = [
-  { field: '_id', name: 'Id Consulta', type: 'link' },
-  { field: 'title', name: 'Motivo', type: 'string' },
-  { field: 'date', name: 'Fecha', type: 'string' },
-  { field: 'laboratoryOrder', name: 'Examenes', type: 'string' },
-  { field: 'prescription', name: 'Recetas', type: 'string' },
-  { field: 'treatment', name: 'Tratamientos', type: 'string' },
 ]

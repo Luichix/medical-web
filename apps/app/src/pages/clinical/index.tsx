@@ -7,7 +7,7 @@ import React, {
 } from 'react'
 import Layout from '@Components/layouts/Dashboard'
 import { ThemeContext } from '@Contexts/index'
-import { CONSULT_HEADERS_DUMMIES } from 'public/data/patient-dummies'
+import { CLINIC_HEADERS_DUMMIES } from 'public/data/patient-dummies'
 import { Table, Search, Paginate } from 'ui'
 import classNames from 'classnames'
 import styles from './clinical.module.css'
@@ -31,7 +31,7 @@ const getHead = (data: any) => {
   return head
 }
 
-const head = getHead(CONSULT_HEADERS_DUMMIES.es)
+const head = getHead(CLINIC_HEADERS_DUMMIES.es)
 
 const ClinicalPage = () => {
   const { theme } = useContext(ThemeContext)

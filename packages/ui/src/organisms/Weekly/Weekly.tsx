@@ -15,7 +15,7 @@ export interface Days extends ExtraProperties {
   date: string
   month: number
   isToday: boolean
-  events: []
+  events: any[]
 }
 
 export interface Week {
@@ -29,7 +29,7 @@ interface EventsProps {
   dayweekActive: number
 }
 
-const DAYS_TEXT_WEEK = ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom']
+const DAYS_TEXT_WEEK = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
 
 const HOURS = [
   '12AM',

@@ -39,16 +39,18 @@ export function Table({ headers, records, theme, style, href }: any) {
               )
             })
           ) : (
-            <td
-              style={{
-                height: '50px',
-                textAlign: 'center',
-                color: '#545454',
-              }}
-              colSpan={headers.length ?? 0}
-            >
-              No se encontraron registros
-            </td>
+            <tr className={styles.empty}>
+              <td
+                style={{
+                  height: '50px',
+                  textAlign: 'center',
+                  color: '#545454',
+                }}
+                colSpan={headers.length ?? 0}
+              >
+                No se encontraron registros
+              </td>
+            </tr>
           )}
         </tbody>
       </table>

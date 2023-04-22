@@ -72,12 +72,22 @@
   font-weight: 500;
   font-size: 14px;
 }
-.table tr td:nth-child(3) span {
-  color: #2a4dd0;
+.table tr td:nth-child(2) span {
+  color: var(--color-primary-highlight);
   font-size: 16px;
   padding: 4px 12px;
   background: #f0f6fe;
   border-radius: 10px;
+  font-weight: 500;
+}
+.table tr td:last-child span {
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+.table tr td:last-child span:hover {
+  color: var(--color-primary-highlight);
+  font-size: 14px;
   font-weight: 500;
 }
 

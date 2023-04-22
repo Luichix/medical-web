@@ -1,3 +1,4 @@
+import { REMINDER_STATE } from '@Data/reminder-dummies'
 import guid from './guid'
 import dayjs from 'dayjs'
 
@@ -14,7 +15,7 @@ export interface Days extends ExtraProperties {
   date: string
   month: number
   isToday: boolean
-  events: []
+  events: any[]
 }
 
 export interface Week {
@@ -74,7 +75,9 @@ const createCalendar = (
             date: date.toISOString(), // Agregar la fecha en formato ISO
             isToday: date.isSame(fechaActual, 'day'),
             month: date.month(),
-            events: [],
+            events: REMINDER_STATE.filter(
+              (element) => element.date === date.toISOString()
+            ),
           }
         }),
     })

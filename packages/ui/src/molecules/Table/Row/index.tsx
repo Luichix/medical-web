@@ -11,8 +11,12 @@ export const Row = ({
   styles: any
   href?: string
 }) => {
+  const handleClickRow = (redirect?: string) => {
+    console.log('href', redirect)
+  }
+
   return (
-    <tr>
+    <tr onClick={() => handleClickRow(href)}>
       {records.map((item: any, index: number) => {
         switch (item.type) {
           case 'string':
@@ -25,7 +29,7 @@ export const Row = ({
             return (
               <td key={index} className={styles}>
                 <span>
-                  <Link href={`${href}${item.value}`}>{item.value}</Link>
+                  <Link href={`${href}${item.value}`}>Ver detalles</Link>
                 </span>
               </td>
             )

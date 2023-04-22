@@ -7,7 +7,7 @@ const Category = ({ item }: any) => {
   const timerest = useTimeRest(createdAt.getTime())
   return (
     <li className={styles.container}>
-      <h5>Consulta</h5>
+      <h5>{item.title}</h5>
       <span>{item.patient}</span>
       <span>{timerest}</span>
     </li>

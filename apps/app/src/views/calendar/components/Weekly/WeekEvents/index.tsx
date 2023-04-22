@@ -1,8 +1,8 @@
-import { NewDay } from '@/store/slices/calendar.slice'
 import classNames from 'classnames'
 import dayjs from 'dayjs'
 import React, { Fragment } from 'react'
 import styles from './styles.module.css'
+import { Days } from '@/views/calendar/utils/createCalendar'
 
 interface Appointment {
   _id: string
@@ -21,7 +21,7 @@ const WeekEvents = ({
   days,
   dayweekActive,
 }: {
-  days: NewDay[]
+  days: Days[]
   dayweekActive: number
 }) => {
   return (

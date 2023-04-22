@@ -17,7 +17,7 @@ export interface Days extends ExtraProperties {
   date: string
   month: number
   isToday: boolean
-  events: []
+  events: any[]
 }
 
 export interface Week {
@@ -45,7 +45,6 @@ export interface MonthProps {
 }
 
 export const Month = ({ ListEvent, onClick, month }: MonthProps) => {
-  console.log(month)
   return (
     <div className={styles.container}>
       {/* weekly header  */}

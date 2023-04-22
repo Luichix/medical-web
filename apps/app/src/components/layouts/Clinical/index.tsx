@@ -9,10 +9,11 @@ import { VscTypeHierarchySub } from 'react-icons/vsc'
 import { TbReportMedical, TbClipboardList } from 'react-icons/tb'
 import { ListItem } from '../../customs/ListItem'
 import { useRouter } from 'next/router'
+import { MdOutlinePeopleAlt } from 'react-icons/md'
 
 const routes = {
   personal: {
-    navigator: 'Datos de identidad personal',
+    navigator: 'Datos del paciente',
     ref: '/clinical/patient/profile',
     routes: [
       {
@@ -33,7 +34,7 @@ const routes = {
     ],
   },
   history: {
-    navigator: 'Anamnesis remota',
+    navigator: 'Historial clinico',
     ref: '/clinical/patient/history',
     isScroll: true,
     routes: [
@@ -80,19 +81,7 @@ const routes = {
     ],
   },
   consult: {
-    navigator: 'Recetas y examenes',
-    ref: '/clinical/patient/consult',
-    isScroll: true,
-    routes: [
-      {
-        route: 'Añadir consultas',
-        ref: '/clinical/patient/consult',
-        anchor: '#add-consult',
-      },
-    ],
-  },
-  patient: {
-    navigator: 'Listado de pacientes',
+    navigator: 'Gestión de consultas',
     ref: '/clinical/patient',
     isScroll: true,
     routes: [
@@ -101,7 +90,16 @@ const routes = {
         ref: '/clinical/patient',
         anchor: '#dating-history',
       },
+      {
+        route: 'Añadir consultas',
+        ref: '/clinical/patient/consult',
+        anchor: '#add-consult',
+      },
     ],
+  },
+  find: {
+    route: 'Gestión de pacientes',
+    ref: '/clinical',
   },
 }
 
@@ -150,35 +148,29 @@ export const ClinicalLayout = ({ children }: { children: ReactNode }) => {
               </li>
             ))}
           </ListItem>
-          <Link
-            href={`${routes.consult.routes[0].ref}${id}${
-              routes.consult.routes[0].anchor
-                ? routes.consult.routes[0].anchor
-                : ''
-            }`}
-            className={styles.group}
+
+          <ListItem
+            behavior={showNav}
+            navigation={routes.consult.navigator}
+            color="sky"
+            Icon={TbReportMedical}
           >
+            {routes.consult.routes.map((route, index) => (
+              <li key={`route-${index}`}>
+                <Link
+                  href={`${route.ref}${id}${route.anchor ? route.anchor : ''}`}
+                  className={styles.option}
+                >
+                  {route.route}
+                </Link>
+              </li>
+            ))}
+          </ListItem>
+          <Link href={routes.find.ref} className={styles.group}>
             <i className={classNames(styles.item, styles.colorSky)}>
-              <TbReportMedical />
+              <MdOutlinePeopleAlt />
             </i>
-            <span className={styles.link}>
-              {routes.consult.routes[0].route}
-            </span>
-          </Link>
-          <Link
-            href={`${routes.patient.routes[0].ref}${id}${
-              routes.patient.routes[0].anchor
-                ? routes.patient.routes[0].anchor
-                : ''
-            }`}
-            className={styles.group}
-          >
-            <i className={classNames(styles.item, styles.colorSky)}>
-              <TbClipboardList />
-            </i>
-            <span className={styles.link}>
-              {routes.patient.routes[0].route}
-            </span>
+            <span className={styles.link}>{routes.find.route}</span>
           </Link>
         </Sidenav>
         <div className={styles.main}>{children}</div>

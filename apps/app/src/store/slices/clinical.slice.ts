@@ -2,12 +2,12 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { PayloadAction } from '@reduxjs/toolkit'
 import { ClinicalState } from '@/interfaces/state'
 import ConsultAPI from '@/pages/api/Consult'
-import { CONSULT_DATA_DUMMIES } from '@Data/patient-dummies'
+import { CLINIC_DATA_DUMMIES } from '@Data/patient-dummies'
 
 const initialState: ClinicalState = {
-  patient: CONSULT_DATA_DUMMIES,
+  patient: CLINIC_DATA_DUMMIES,
   search: '',
-  filteredPatient: CONSULT_DATA_DUMMIES,
+  filteredPatient: CLINIC_DATA_DUMMIES,
   pending: false,
   error: false,
 }

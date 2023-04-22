@@ -77,30 +77,30 @@
   } */
 
   /* monday */
-  .col_0 {
+  .col_1 {
     grid-column-start: 2;
   }
   /* tuesday */
-  .col_1 {
+  .col_2 {
     grid-column-start: 3;
   }
   /* wednesday */
-  .col_2 {
+  .col_3 {
     grid-column-start: 4;
   }
   /* thursday */
-  .col_3 {
+  .col_4 {
     grid-column-start: 5;
   }
   /* friday */
-  .col_4 {
+  .col_5 {
     grid-column-start: 6;
   }
   /* saturday */
-  .col_5 {
+  .col_6 {
     grid-column-start: 7;
   }
-  .col_6 {
+  .col_7 {
     /* sunday */
     grid-column-start: 1;
   }

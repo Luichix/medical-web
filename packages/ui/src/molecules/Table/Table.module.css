@@ -18,7 +18,7 @@
   border: 1px solid var(--color-tertiary-inverted);
 }
 
-.table tbody tr:hover {
+.table tbody tr:hover:not(.empty) {
   outline: 2px solid var(--color-blue-gray-400);
   outline-offset: 0px;
   border-collapse: none;
@@ -29,7 +29,7 @@
   color: #02233d;
 } */
 
-.table tr:hover td:first-child {
+.table tr:hover:not(.empty) td:first-child {
   border-left: 8px solid var(--color-blue-gray-400);
   transition: border 0.15s;
 }

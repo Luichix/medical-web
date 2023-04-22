@@ -91,7 +91,7 @@ export const Paginate = ({ data, itemsPerPage, setData }: PaginateProps) => {
 
   return (
     <div className={styles.container}>
-      {currentClickedNumber > 1 ? (
+      {currentClickedNumber > 1 && totalPages > 0 ? (
         <div className={styles.right}>
           <button
             onClick={moveToFirstPage}

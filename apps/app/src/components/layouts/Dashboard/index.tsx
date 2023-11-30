@@ -7,25 +7,47 @@ import Link from 'next/link'
 import { AiOutlineAppstoreAdd, AiTwotoneCalendar } from 'react-icons/ai'
 import { CgLogOut } from 'react-icons/cg'
 import { BsPersonBadge } from 'react-icons/bs'
-import { BiTask } from 'react-icons/bi'
+import { BiHome, BiTask } from 'react-icons/bi'
+import {
+  MdOutlineSettings,
+  MdOutlineHelpOutline,
+  MdOutlineSick,
+} from 'react-icons/md'
+import { FaUserDoctor, FaRegCalendarMinus } from 'react-icons/fa6'
 
 const routes = {
   logout: {
-    route: 'Logout',
+    route: 'Salir',
     ref: '/logout',
     id: 'navBarlogout',
   },
   find: {
-    route: 'Gestión de pacientes',
+    route: 'Pacientes',
     ref: '/clinical',
   },
   calendar: {
-    route: 'Calendario de citas',
+    route: 'Calendario',
     ref: '/calendars',
   },
   activities: {
-    route: 'Gestión de tareas',
+    route: 'Actividades',
     ref: '/activities',
+  },
+  home: {
+    route: 'Tablero',
+    ref: '/',
+  },
+  doctors: {
+    route: 'Doctores',
+    ref: '/doctors',
+  },
+  setting: {
+    route: 'Configuración',
+    ref: '/setting',
+  },
+  support: {
+    route: 'Soporte',
+    ref: '/support',
   },
 }
 
@@ -37,6 +59,24 @@ export const DashboardLayout = ({ children }: { children: ReactNode }) => {
     <div className={classNames(styles.dashboard, styles[value?.theme])}>
       <div className={classNames(styles.container)}>
         <Sidenav show={showNav} onClick={() => setShowNav(!showNav)}>
+          <Link href={routes.home.ref} className={styles.group}>
+            <i className={classNames(styles.item, styles.colorSky)}>
+              <BiHome />
+            </i>
+            <span className={styles.link}>{routes.home.route}</span>
+          </Link>
+          <Link href={routes.doctors.ref} className={styles.group}>
+            <i className={classNames(styles.item, styles.colorSky)}>
+              <FaUserDoctor />
+            </i>
+            <span className={styles.link}>{routes.doctors.route}</span>
+          </Link>
+          <Link href={routes.find.ref} className={styles.group}>
+            <i className={classNames(styles.item, styles.colorSky)}>
+              <MdOutlineSick />
+            </i>
+            <span className={styles.link}>{routes.find.route}</span>
+          </Link>
           <Link href={routes.activities.ref} className={styles.group}>
             <i className={classNames(styles.item, styles.colorSky)}>
               <BiTask />
@@ -45,20 +85,26 @@ export const DashboardLayout = ({ children }: { children: ReactNode }) => {
           </Link>
           <Link href={routes.calendar.ref} className={styles.group}>
             <i className={classNames(styles.item, styles.colorSky)}>
-              <AiTwotoneCalendar />
+              <FaRegCalendarMinus />
             </i>
             <span className={styles.link}>{routes.calendar.route}</span>
           </Link>
-          <Link href={routes.find.ref} className={styles.group}>
+          <Link href={routes.setting.ref} className={styles.group}>
             <i className={classNames(styles.item, styles.colorSky)}>
-              <BsPersonBadge />
+              <MdOutlineSettings />
             </i>
-            <span className={styles.link}>{routes.find.route}</span>
+            <span className={styles.link}>{routes.setting.route}</span>
+          </Link>
+          <Link href={routes.setting.ref} className={styles.group}>
+            <i className={classNames(styles.item, styles.colorSky)}>
+              <MdOutlineHelpOutline />
+            </i>
+            <span className={styles.link}>{routes.support.route}</span>
           </Link>
           <Link
             id={routes.logout.id}
-            href={routes.logout.ref}
-            className={classNames(styles.group, styles.logout)}
+            href={routes.home.ref}
+            className={classNames(styles.logout)}
           >
             <i className={classNames(styles.item, styles.colorSky)}>
               <CgLogOut />
@@ -66,7 +112,7 @@ export const DashboardLayout = ({ children }: { children: ReactNode }) => {
             <span className={styles.link}>{routes.logout.route}</span>
           </Link>
         </Sidenav>
-        <div className={styles.main}>{children}</div>
+        <main className={styles.main}>{children}</main>
       </div>
     </div>
   )

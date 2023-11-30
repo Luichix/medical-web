@@ -18,9 +18,6 @@ export const Sidenav = ({
 }: SidenavProps) => {
   return (
     <div className={styles.container}>
-      <div className={styles.buttonBar}>
-        <ButtonMenu checked={show} checkedHandler={onClick} />
-      </div>
       <div
         className={classNames(
           styles.sidenav,
@@ -31,6 +28,12 @@ export const Sidenav = ({
           styles[theme]
         )}
       >
+        <div className={styles.title}>
+          <div className={styles.buttonBar}>
+            <ButtonMenu checked={show} checkedHandler={onClick} />
+          </div>
+          <h1>CARE</h1>
+        </div>
         <ul className={styles.list}>{children}</ul>
       </div>
     </div>

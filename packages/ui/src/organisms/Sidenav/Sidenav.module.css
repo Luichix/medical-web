@@ -23,7 +23,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   padding-top: 2rem;
-  background-color: var(--color-base-white);
+  background-color: var(--color-secondary-highlight);
 }
 
 .sidenav::-webkit-scrollbar {
@@ -48,7 +48,7 @@
 /* ---------------------------- behavior sidenav ---------------------------- */
 
 .visible {
-  width: 275px;
+  width: 240px;
   z-index: 900;
   transition: all 0.3s;
 }
@@ -67,6 +67,18 @@
   to {
     filter: brightness(1);
   }
+}
+.title {
+  position: relative;
+  width: 100%;
+  padding: 0 0 0 68px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  margin-top: 8px;
+  line-height: 0;
+  color: var(--color-base-white);
 }
 
 .buttonBar {

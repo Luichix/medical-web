@@ -129,7 +129,7 @@ const Main = () => {
                 </div>
                 <h2 className="text-2xl font-bold mt-4 mb-6">Tablero</h2>
                 {/* <!-- Stats Grid --> */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="flex flex-col lg:grid md:grid-cols-3 gap-4 mb-6 ">
                   {/* <!-- Doctors --> */}
                   <div className="bg-white p-6 shadow-lg rounded-lg">
                     <div className="flex items-center justify-between">
@@ -181,36 +181,6 @@ const Main = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/* <!-- More Stats --> */}
-
-                  {/* <!-- Hospital Survey --> */}
-                  <div className="col-span-2 bg-white p-6 shadow-lg rounded-lg flex flex-col">
-                    <div className="flex items-center justify-between mb-4">
-                      <h2 className="text-xl font-bold text-blue-800">
-                        Estadisticas Hospitalarias
-                      </h2>
-                    </div>
-                    <div className="grid h-full items-center grid-cols-3 gap-4 ">
-                      <div className="flex flex-col items-center text-center">
-                        <FaHospital size={48} className="text-blue-600" />
-                        <p className="text-xl font-bold">200</p>
-                        <p className="text-sm text-gray-600">Personal Total</p>
-                      </div>
-                      <div className="text-center flex flex-col items-center">
-                        <FaBed size={48} className="text-teal-600" />
-                        <p className="text-xl font-bold">836</p>
-                        <p className="text-sm text-gray-600">Número de Camas</p>
-                      </div>
-                      <div className="text-center flex flex-col items-center">
-                        <FaSyringe size={48} className=" text-green-600" />
-                        <p className="text-xl font-bold">120</p>
-                        <p className="text-sm text-gray-600">
-                          Cirugías Diarias
-                        </p>
-                      </div>
-                    </div>
-                  </div>
                   {/* <!-- Balance --> */}
                   <div className="col-start-3 row-start-1 bg-white p-6 shadow-lg rounded-lg">
                     <div className="flex justify-between mb-2">
@@ -236,9 +206,39 @@ const Main = () => {
                       </div>
                     </div>
                   </div>
+
+                  {/* <!-- More Stats --> */}
+
+                  {/* <!-- Hospital Survey --> */}
+                  <div className="col-span-2 bg-white p-6 shadow-lg rounded-lg flex flex-col">
+                    <div className="flex items-center justify-between mb-4">
+                      <h2 className="text-xl font-bold text-blue-800">
+                        Estadisticas Hospitalarias
+                      </h2>
+                    </div>
+                    <div className="flex flex-col sm:grid h-full items-center grid-cols-3 gap-4 ">
+                      <div className="flex flex-col items-center text-center">
+                        <FaHospital size={48} className="text-blue-600" />
+                        <p className="text-xl font-bold">200</p>
+                        <p className="text-sm text-gray-600">Personal Total</p>
+                      </div>
+                      <div className="text-center flex flex-col items-center">
+                        <FaBed size={48} className="text-teal-600" />
+                        <p className="text-xl font-bold">836</p>
+                        <p className="text-sm text-gray-600">Número de Camas</p>
+                      </div>
+                      <div className="text-center flex flex-col items-center">
+                        <FaSyringe size={48} className=" text-green-600" />
+                        <p className="text-xl font-bold">120</p>
+                        <p className="text-sm text-gray-600">
+                          Cirugías Diarias
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                   {/* <!-- Graphs and Reviews --> */}
                   {/* <!-- Analytics Overview --> */}
-                  <div className="col-span-2 bg-white p-6 shadow-lg rounded-lg">
+                  <div className="sr-only sm:not-sr-only col-span-2 bg-white p-6 shadow-lg rounded-lg">
                     <div className="mb-4">
                       <h2 className="text-xl font-bold text-green-600 mb-2">
                         Análisis General

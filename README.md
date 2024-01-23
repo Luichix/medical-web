@@ -1,73 +1,77 @@
-# Turborepo starter
+# Clinic App
 
-This is an official Yarn v1 starter turborepo.
+## Project Description 🏥
 
-## What's inside?
+Clinic App is a web application designed for patient management in a clinic, providing functionalities to manage medical records, schedule appointments, visualize and manage patient appointments, and access information about clinic doctors. This project is currently under construction and is a fundamental part of my portfolio as a developer.
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:
+## Screenshots / Demo 📸
 
-### Apps and Packages
+Explore a demo of Clinic App [here](https://medical-web-app.vercel.app).
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+![Screenshots](public/01.png)
+
+## Installation 🛠️
+
+As part of the project, the code is organized in a monorepository using TurboRepo from Vercel. To try it out, make sure you have [Yarn](https://yarnpkg.com/) installed. Installing dependencies is straightforward, just run the following command from the project's root:
+
+```bash
+yarn
+```
+
+## Project Usage 🚀
+
+To build all applications and packages, use the following command:
+
+```bash
+yarn run build
+```
+
+To develop applications and packages, run the following command:
+
+```bash
+yarn run dev
+```
+
+You can also access individual applications in the `apps` folder and run the same command.
+
+### Applications and Packages 📦
+
+- `docs`: a [Next.js](https://nextjs.org/) application
+- `app`: another [Next.js](https://nextjs.org/) application
+- `ui`: a React component library shared by the `web` and `docs` applications
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `tsconfig`: `tsconfig.json` files used throughout the monorepo
+- `tailwind`: a package providing styling utilities using Tailwind CSS
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## Technologies Used ⚙️
 
-### Utilities
+The development of Clinic App has utilized various technologies, including:
 
-This turborepo has some additional tools already setup for you:
+- TurboRepo
+- Next.js
+- React
+- Redux
+- Storybook
+- Tailwind CSS
+- Yarn
+
+### Utilities 🧰
+
+Within this turborepo, some additional tools have already been set up to simplify the experience:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+- [Husky](https://github.com/typicode/husky) to run scripts before Git events
 
-### Build
+## Project Status 🚧
 
-To build all apps and packages, run the following command:
+Clinic App is under development, and there are still areas being improved, both in design and functionality, as well as in documentation.
 
-```
-cd my-turborepo
-yarn run build
-```
+## Contribution 🤝
 
-### Develop
+So far, the project is primarily intended as part of my portfolio, and specific contribution guidelines have not been established.
 
-To develop all apps and packages, run the following command:
+## License ⚖️
 
-```
-cd my-turborepo
-yarn run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+This project is distributed under the MIT License. Thank you for your interest!

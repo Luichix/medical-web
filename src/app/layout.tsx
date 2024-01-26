@@ -1,6 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import {
+  AuthProvider,
+  GraphqlProvider,
+  LanguageProvider,
+  ThemeProvider,
+} from '@/contexts/index'
+import '@/styles/index.css'
 import { StoreProvider } from '@/store/StoreProvider'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,10 +22,21 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
+    // <LanguageProvider>
+    // <ThemeProvider>
+    //   <GraphqlProvider>
+    //     <AuthProvider>
     <StoreProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          {children}
+          <div id="portal"></div>
+        </body>
       </html>
     </StoreProvider>
+    // </AuthProvider>
+    //     </GraphqlProvider>
+    //   </ThemeProvider>
+    // </LanguageProvider>
   )
 }

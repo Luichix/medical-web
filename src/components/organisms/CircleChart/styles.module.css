@@ -1,0 +1,51 @@
+/* Additional styles for the circular progress chart */
+.circular {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+.bgCircle {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+.circular text {
+  fill: #333;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+/* Tailwind doesn't support inline SVG styling, so it's done here */
+.orange {
+  stroke: #ff9f00;
+}
+.purple {
+  stroke: #9e5fff;
+}
+.blue {
+  stroke: #3b82f6;
+}
+
+/* Additional styles for the progress bars */
+.progress {
+  background: #e5e7eb;
+  border-radius: 9999px;
+  height: 1rem;
+}
+.bar {
+  background: #3b82f6;
+  border-radius: 9999px 0 0 9999px;
+  height: 100%;
+  transition: width 0.4s ease;
+}

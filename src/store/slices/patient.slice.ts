@@ -1,4 +1,4 @@
-import PatientData from '@/page/api/Patient'
+import PatientData from '@/services/Patient'
 import { PATIENT_INFORMATION_DUMMIES } from '@/../public/data/patient-dummies'
 import { Patient, TypeClinicalRecord } from '@/interfaces/patient'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'

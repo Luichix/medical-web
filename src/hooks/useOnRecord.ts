@@ -1,18 +1,18 @@
-import PatientData, { TypeRecordEnum } from '@/pages/api/Patient'
+import PatientData, { TypeRecordEnum } from '@/services/Patient'
 import {
   addRecord,
   deleteRecord,
   updateRecord,
 } from '@/store/slices/patient.slice'
 import { useAppDispatch } from '@/store/store'
-import { TypeClinicalRecord, TypeRecord } from '@Interfaces/patient'
+import { TypeClinicalRecord, TypeRecord } from '@/interfaces/patient'
 
 export const useOnRecord = ({ id }: { id: string }) => {
   const dispatch = useAppDispatch()
 
   const onSendRecord = async (
     type: TypeClinicalRecord,
-    record: Record<string, string>
+    record: Record<string, string>,
   ) => {
     if (typeof id !== 'string') {
       throw Error('No sea indicado un paciente en la ruta')
@@ -60,7 +60,7 @@ export const useOnRecord = ({ id }: { id: string }) => {
   const onModifyRecord = async (
     idRecord: string,
     record: Record<string, string>,
-    type: TypeClinicalRecord
+    type: TypeClinicalRecord,
   ) => {
     if (typeof id !== 'string') {
       throw Error('No sea indicado un paciente en la ruta')

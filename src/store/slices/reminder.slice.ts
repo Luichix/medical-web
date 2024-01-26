@@ -1,4 +1,4 @@
-import EventAPI from '@/page/api/Event'
+import EventAPI from '@/services/Event'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { GetAppointment, GetKanban } from '@/interfaces/reminder'
 import { ReminderState } from '@/interfaces/state'

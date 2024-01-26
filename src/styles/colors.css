@@ -350,25 +350,27 @@
   --z-index-50: 50;
   --z-index-auto: auto;
 
-  --color-font-base: #073052;
-  --color-font-muted: #6f6f6f;
-  --color-font-highlight: #727272;
+  --color-font-base: #231f1f;
+  /* --color-font-muted: #6f6f6f; */
+  /* --color-font-highlight: #727272; */
   --color-font-inverted: #fcfdfd;
 
-  --color-primary: #073052;
-  --color-primary-muted: #829ab1;
-  --color-primary-highlight: #2680c2;
-  --color-primary-inverted: #1f405b;
+  --bg-color-primary: #ffffff;
 
-  --color-secondary: #627d98;
-  --color-secondary-muted: #acc4dd;
-  --color-secondary-highlight: #024779;
-  --color-secondary-inverted: #9fb3c8;
+  --color-primary: #089bab;
+  /* --color-primary-muted: #fff;
+  --color-primary-highlight: #fff; */
+  --color-primary-inverted: #fff;
 
-  --color-tertiary: #7b97b5;
-  --color-tertiary-muted: #f2e4d5;
-  --color-tertiary-highlight: #a7f3d0;
-  --color-tertiary-inverted: #bcccdc;
+  --color-secondary: #e9f3f3;
+  /* --color-secondary-muted: #fff;
+  --color-secondary-highlight: #fff; */
+  --color-secondary-inverted: #fff;
+
+  --color-tertiary: #f7b973;
+  /* --color-tertiary-muted: #fff;
+  --color-tertiary-highlight: #fff; */
+  --color-tertiary-inverted: #fff;
 
   --color-success: #268f47;
   --color-error: #eb4e58;

@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { PayloadAction } from '@reduxjs/toolkit'
 import { ConsultState } from '@/interfaces/state'
-import ConsultAPI from '@/page/api/Consult'
+import ConsultAPI from '@/services/Consult'
 import { CONSULT_DATA_DUMMIES } from '@/../public/data/patient-dummies'
 
 const initialState: ConsultState = {

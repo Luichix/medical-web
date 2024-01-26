@@ -1,15 +1,12 @@
 'use client'
-import React, { ReactElement } from 'react'
-// import Layout from '@/components/layouts/Dashboard'
-// import getStore from '@/store/store'
-// import { getReminder } from '@/store/slices/reminder.slice'
-import { Container } from '@/components/layouts/Container'
+import React from 'react'
+import { Container } from '@/components/templates/Container'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store/store'
 import styles from './styles.module.css'
-import Reminder from '@/components/customs/Reminder'
+import Reminder from '@/components/organisms/Reminder'
 
-const ActivitiesPage = () => {
+const Activities = () => {
   const reminders = useSelector((state: RootState) => state.reminder.reminder)
 
   return (
@@ -27,22 +24,4 @@ const ActivitiesPage = () => {
   )
 }
 
-// ActivitiesPage.getLayout = function getLayout(page: ReactElement) {
-//   return <Layout>{page}</Layout>
-// }
-
-// export async function getServerSideProps() {
-//   const store = getStore()
-//   await store.dispatch(
-//     getReminder({
-//       clinic: 'salud',
-//     }),
-//   )
-//   return {
-//     props: {
-//       initialState: store.getState(),
-//     },
-//   }
-// }
-
-export default ActivitiesPage
+export default Activities

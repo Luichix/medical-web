@@ -1,6 +1,0 @@
-export * from './atoms'
-export * from './chart'
-export * from './layout'
-export * from './molecules'
-export * from './organisms'
-export * from './types.d'

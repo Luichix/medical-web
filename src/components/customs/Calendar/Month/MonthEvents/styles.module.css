@@ -1,0 +1,48 @@
+/** list */
+
+.list {
+  display: flex;
+  list-style: none;
+  gap: 2px;
+  flex-direction: row;
+  padding: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 990px) {
+  .list {
+    flex-direction: column;
+    padding: 10px 4px 0 4px;
+    height: 100%;
+    align-items: initial;
+    flex-wrap: initial;
+    overflow-y: auto;
+  }
+}
+
+/* -------------------------- scroll kit container -------------------------- */
+
+.list::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+  height: 14px; /* Altura del scrollbar */
+  background-color: var(
+    --color-tertiary-muted
+  ); /* Color del fondo del scrollbar */
+  border-radius: 10px; /* Radio de la esquina del scrollbar */
+  border: none;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: var(
+    --color-blue-gray-400
+  ); /* Color del thumb del scrollbar */
+  border-radius: 10px; /* Radio de la esquina del thumb del scrollbar */
+}
+
+.list::-webkit-scrollbar-track {
+  background-color: var(
+    --color-tertiary-muted
+  ); /* Color del track del scrollbar */
+  border-radius: 10px; /* Radio de la esquina del track del scrollbar */
+}

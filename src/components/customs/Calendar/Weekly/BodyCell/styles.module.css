@@ -1,0 +1,17 @@
+/** cell */
+
+.cell {
+  position: relative;
+  width: 100px;
+  height: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-secondary-muted);
+  cursor: pointer;
+}
+
+/** weekend */
+
+.weekend {
+  background-color: var(--color-tertiary-muted);
+}

@@ -1,0 +1,45 @@
+/** reminder */
+
+.reminder {
+  display: none;
+}
+
+.eventMobile {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary-highlight);
+  border-radius: 50%;
+}
+
+@media (min-width: 640px) {
+  .eventMobile {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (min-width: 990px) {
+  .reminder {
+    background: #dceefb;
+    border-left: 2px solid #2680c2;
+    box-sizing: border-box;
+    font-family: var(--font-family-roboto);
+    font-style: normal;
+    padding: 4px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-primary-highlight);
+    display: flex;
+    justify-content: space-between;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .reminder span::first-letter {
+    text-transform: capitalize;
+  }
+
+  .eventMobile {
+    display: none;
+  }
+}

@@ -1,0 +1,83 @@
+.show {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.hidden {
+  position: fixed;
+  top: 0;
+  right: -500px;
+  z-index: 9999;
+}
+
+.alert {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 410px);
+  grid-template-rows: minmax(60px, 1fr);
+  width: 100%;
+  max-width: 450px;
+  border-radius: var(--border-radius-xs);
+  align-content: flex-end;
+  box-shadow: -4px 8px 10px rgba(0, 0, 0, 0.2);
+  padding-top: 4px;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--font-family-roboto);
+}
+
+.icon {
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+  text-align: center;
+  border-top-left-radius: var(--border-radius-xs);
+  border-bottom-left-radius: var(--border-radius-xs);
+  padding: var(--spacing-xs);
+}
+
+.message {
+  width: 100%;
+  font-weight: 600;
+  text-align: justify;
+  padding: 10px;
+}
+
+.successMessage {
+  background-color: var(--color-tertiary-muted);
+  color: var(--color-success);
+}
+
+.successIcon {
+  background-color: var(--color-success);
+  color: var(--color-base-white);
+}
+
+.errorMessage {
+  background-color: var(--color-tertiary-muted);
+  color: var(--color-error);
+}
+
+.errorIcon {
+  background-color: var(--color-error);
+  color: var(--color-base-white);
+}
+
+.infoMessage {
+  background-color: var(--color-tertiary-muted);
+  color: var(--color-info);
+}
+
+.infoIcon {
+  background-color: var(--color-info);
+  color: var(--color-base-white);
+}
+
+.warningMessage {
+  background-color: var(--color-tertiary-muted);
+  color: var(--color-warning);
+}
+
+.warningIcon {
+  background-color: var(--color-warning);
+  color: var(--color-base-white);
+}

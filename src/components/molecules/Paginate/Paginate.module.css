@@ -1,0 +1,53 @@
+.container {
+  display: grid;
+  grid-template-columns: 50px 125px 50px;
+  align-self: center;
+}
+
+.center {
+  justify-self: center;
+  align-self: center;
+}
+
+.left {
+  display: flex;
+  grid-column: 3/4;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+}
+.right {
+  display: flex;
+  grid-column: 1/2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+}
+
+.item {
+  background-color: var(--color-base-white);
+  border: 2px solid var(--color-base-transparent);
+  color: var(--color-cool-gray-400);
+  margin: 0 0.1rem;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.active,
+.item:hover {
+  background-color: var(--color-primary);
+  color: var(--color-base-white);
+  border-radius: var(--border-radius-xs);
+  border: 2px solid var(--color-primary);
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+}

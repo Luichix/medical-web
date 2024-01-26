@@ -1,8 +1,3 @@
 {
-  "apps/**/*.{ts,tsx}": [
-    "eslint"
-  ],
-  "packages/ui/**/*.{ts,tsx}": [
-    "eslint"
-  ]
+  "src/**/*.{ts,tsx}": ["eslint"]
 }

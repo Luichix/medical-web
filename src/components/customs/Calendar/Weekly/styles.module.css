@@ -1,0 +1,83 @@
+/** container */
+
+.container {
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  user-select: none; /* Standard */
+}
+
+.container {
+  width: 100%;
+  height: 700px; /* Altura de ejemplo */
+  overflow: auto;
+}
+
+.container table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.container table thead {
+  position: -webkit-sticky; /* Safari... */
+  position: sticky;
+  height: 50px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  /* border: 1px solid #d9e2ec; */
+}
+
+/** table */
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--font-family-roboto);
+  box-sizing: border-box;
+  /* border: 1px solid #d9e2ec; */
+}
+
+/** column */
+
+.column {
+  background-color: var(--color-base-white);
+}
+
+.column th {
+  width: 50px;
+  height: 50px;
+}
+
+/** row */
+.row {
+  height: 50px;
+}
+
+/** hour */
+
+.hour {
+  position: relative;
+  color: var(--color-secondary-muted);
+  text-align: right;
+  width: 40px;
+  white-space: nowrap;
+  height: 30px;
+  /* border-bottom: 1px solid #d9e2ec; */
+  /* border-left: 1px solid #d9e2ec; */
+}
+
+.hour span {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background-color: var(--color-base-white);
+  /* width: 100%; */
+  padding: 0 0.5rem;
+  font-weight: 500;
+  font-size: 12px;
+}

@@ -1,0 +1,64 @@
+/* ------------------------ group label and textarea ------------------------ */
+
+.group {
+  font-family: var(--font-family-roboto);
+  font-style: normal;
+  font-weight: 500;
+  font-size: var(--font-size-base);
+  line-height: 19px;
+  color: var(--color-secondary);
+  padding: 20px;
+  background-color: var(--color-base-white);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-tertiary-inverted);
+  position: relative;
+}
+
+.group span {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+  opacity: 0.8;
+}
+
+.isActive {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--color-tertiary-inverted);
+}
+
+.isActive span {
+  color: var(--color-secondary-inverted);
+  padding: 4px;
+  font-size: 12px;
+}
+
+/* ------------------------------- exit card ------------------------------- */
+
+.exit {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  outline: transparent;
+  border: transparent;
+  color: var(--color-base-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  opacity: 0.7;
+  display: flex;
+  z-index: 100;
+}
+
+.exit:hover {
+  opacity: 1;
+}

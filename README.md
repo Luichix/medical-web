@@ -12,10 +12,10 @@ Explore a demo of Clinic App [here](https://medical-web-app.vercel.app).
 
 ## Installation 🛠️
 
-As part of the project, the code is organized in a monorepository using TurboRepo from Vercel. To try it out, make sure you have [Yarn](https://yarnpkg.com/) installed. Installing dependencies is straightforward, just run the following command from the project's root:
+Installing dependencies is straightforward, just run the following command from the project's root:
 
 ```bash
-yarn
+npm install
 ```
 
 ## Project Usage 🚀
@@ -23,37 +23,25 @@ yarn
 To build all applications and packages, use the following command:
 
 ```bash
-yarn run build
+npm run build
 ```
 
 To develop applications and packages, run the following command:
 
 ```bash
-yarn run dev
+npm run dev
 ```
 
 You can also access individual applications in the `apps` folder and run the same command.
-
-### Applications and Packages 📦
-
-- `docs`: a [Next.js](https://nextjs.org/) application
-- `app`: another [Next.js](https://nextjs.org/) application
-- `ui`: a React component library shared by the `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json` files used throughout the monorepo
-- `tailwind`: a package providing styling utilities using Tailwind CSS
 
 ## Technologies Used ⚙️
 
 The development of Clinic App has utilized various technologies, including:
 
-- TurboRepo
 - Next.js
 - React
 - Redux
-- Storybook
 - Tailwind CSS
-- Yarn
 
 ### Utilities 🧰
 

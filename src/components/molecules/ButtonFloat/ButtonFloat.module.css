@@ -1,0 +1,21 @@
+.button {
+  position: fixed;
+  background: none;
+  cursor: pointer;
+  text-align: right;
+  transition: all 0.4s;
+  bottom: 3rem;
+  right: 3rem;
+  line-height: 0;
+  z-index: 1;
+  padding: 1rem;
+  border: 0;
+  border-radius: 50%;
+  font-size: var(--font-size-xl);
+  color: var(--color-base-white);
+  background-color: var(--color-primary-highlight);
+}
+
+.button:hover {
+  opacity: 0.8;
+}

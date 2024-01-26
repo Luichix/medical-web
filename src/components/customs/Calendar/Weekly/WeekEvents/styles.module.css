@@ -1,0 +1,113 @@
+/* --------------------------------- events --------------------------------- */
+
+.events {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.75rem repeat(288, minmax(0, 1fr)) auto;
+}
+
+/* ------------------------------- event list ------------------------------- */
+.EventsListItem {
+  display: flex;
+  padding: 4px;
+}
+
+.EventsListItem a {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow-y: auto;
+  border-radius: 0.375rem;
+  background-color: var(--color-secondary);
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.EventsListItem a:hover {
+  background-color: var(--color-secondary-inverted);
+}
+
+.EventsListItem a .title {
+  order: 1;
+  font-weight: 600;
+  color: var(--color-font-base);
+}
+
+.EventsListItem a time {
+  color: var(--color-blue-500);
+  transition: color 0.2s ease-in-out;
+}
+
+.EventsListItem a:hover time {
+  color: var(--color-blue-700);
+}
+
+/* -------------------------- show and hidden days -------------------------- */
+
+.hiddenDay {
+  display: none;
+}
+
+.showDay {
+  display: flex;
+}
+
+/* ------------------------------ media queries ------------------------------ */
+/* Media query para pantallas grandes */
+
+@media screen and (min-width: 640px) {
+  .events {
+    grid-template-columns: repeat(7, 1fr);
+    padding-right: 1.25rem;
+  }
+}
+
+@media (min-width: 640px) {
+  /* .EventsListItem {
+    grid-row-start: 74;
+    grid-row-end: span 12;
+    grid-column-start: 3;
+  } */
+
+  /* monday */
+  .col_1 {
+    grid-column-start: 2;
+  }
+  /* tuesday */
+  .col_2 {
+    grid-column-start: 3;
+  }
+  /* wednesday */
+  .col_3 {
+    grid-column-start: 4;
+  }
+  /* thursday */
+  .col_4 {
+    grid-column-start: 5;
+  }
+  /* friday */
+  .col_5 {
+    grid-column-start: 6;
+  }
+  /* saturday */
+  .col_6 {
+    grid-column-start: 7;
+  }
+  .col_7 {
+    /* sunday */
+    grid-column-start: 1;
+  }
+}
+
+@media (min-width: 640px) {
+  .hiddenDay {
+    display: flex;
+  }
+}

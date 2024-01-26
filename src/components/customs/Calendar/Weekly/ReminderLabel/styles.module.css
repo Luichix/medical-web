@@ -1,0 +1,24 @@
+/** reminder */
+
+.reminder {
+  background: #dceefb;
+  border-left: 2px solid #2680c2;
+  box-sizing: border-box;
+  font-family: var(--font-family-roboto);
+  font-style: normal;
+  padding: 4px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--color-primary-highlight);
+  display: flex;
+  justify-content: space-between;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  /* max-width: fit-content; */
+  /* width: calc(50% - 20px); */
+}
+
+.reminder span::first-letter {
+  text-transform: capitalize;
+}

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
 import styles from './styles.module.css'
-import { ThemeContext } from '@Contexts/index'
 import { FaBars } from 'react-icons/fa'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,10 +12,9 @@ function Navbar({
   isNav: boolean
   handleNav: () => void
 }) {
-  const { theme } = useContext(ThemeContext)
   return (
     <div>
-      <header id="header" className={classNames(styles.header, styles[theme])}>
+      <header id="header" className={classNames(styles.header)}>
         <Image
           className={styles.image}
           src="/medical-symbol.svg"

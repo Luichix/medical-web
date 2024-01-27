@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
-  gap: 64px;
+  min-height: 100vh;
+  gap: 24px;
   position: relative;
-  background-color: var(--color-tertiary-muted);
+  background-color: var(--color-secondary);
+  padding: 20px 0;
+  border-radius: var(--border-radius-sm);
 }
 
 .searchContainer {
@@ -13,9 +15,7 @@
   flex-direction: row;
   align-items: center;
   padding: 0;
-  border: 1px solid #e1e1e1;
   gap: 2rem;
-  background-color: var(--color-base-white);
 }
 
 .tools {
@@ -34,7 +34,7 @@
 
 .primaryButton {
   /* Primario/morado */
-  background-color: var(--color-primary-highlight);
+  background-color: var(--color-primary);
   border-radius: 5px;
   padding: 11px 28px;
   border: none;
@@ -48,7 +48,7 @@
 }
 
 .secundaryButton {
-  background-color: var(--color-tertiary-muted);
+  background-color: var(--color-primary);
   border-radius: 5px;
   padding: 11px 28px;
   border: none;
@@ -58,7 +58,7 @@
   display: flex;
   align-items: center;
   text-align: right;
-  color: var(--color-primary-highlight);
+  color: var(--color-primary);
 }
 
 .tableContainer {
@@ -72,12 +72,36 @@
   font-weight: 500;
   font-size: 14px;
 }
-.table tr td:nth-child(2) span {
-  color: var(--color-primary-highlight);
-  font-size: 16px;
-  padding: 4px 12px;
-  background: #f0f6fe;
-  border-radius: 10px;
+
+.table tr td:nth-child(3) span::before {
+  /* color: var(--color-primary-highlight); */
+  /* font-size: 16px; */
+  /* padding: 4px 12px;
+  background: #f0f6fe; */
+  /* border-radius: 10px; */
+  content: '';
+  display: inline-block;
+  padding: 5px;
+  border-radius: 2px;
+  width: 4px;
+  height: 4px;
+  margin-right: 4px;
+  font-weight: 500;
+}
+
+.table tr td:nth-child(3) span[content='Active']::before {
+  background-color: var(--color-primary);
+}
+.table tr td:nth-child(3) span[content='Inactive']::before {
+  background-color: var(--color-tertiary);
+}
+
+.table tr td:nth-child(5) span {
+  /* color: var(--color-primary-highlight); */
+  /* font-size: 16px; */
+  /* padding: 4px 12px;
+  background: #f0f6fe; */
+  /* border-radius: 10px; */
   font-weight: 500;
 }
 .table tr td:last-child span {

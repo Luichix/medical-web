@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import { BiDownload } from 'react-icons/bi'
+import Image from 'next/image'
+import classNames from 'classnames'
 
 export const Row = ({
   records,
@@ -22,14 +24,33 @@ export const Row = ({
           case 'string':
             return (
               <td key={index} className={styles}>
-                <span>{item.value}</span>
+                <span content={item.value}>{item.value}</span>
+              </td>
+            )
+          case 'user':
+            return (
+              <td
+                key={index}
+                className={classNames(
+                  styles,
+                  'flex items-center justify-start gap-2',
+                )}
+              >
+                <Image
+                  src={item.value.picture}
+                  alt="profile picture"
+                  height={32}
+                  width={32}
+                  className="rounded-full"
+                />
+                <span>{item.value.name}</span>
               </td>
             )
           case 'link':
             return (
               <td key={index} className={styles}>
                 <span>
-                  <Link href={`${href}${item.value}`}>Ver detalles</Link>
+                  <Link href={`${href}${item.value}`}>View Profile</Link>
                 </span>
               </td>
             )

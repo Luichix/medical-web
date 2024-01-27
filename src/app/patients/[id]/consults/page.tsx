@@ -55,13 +55,13 @@ const PatientPage = ({ params }: { params: { id: string } }) => {
         <div className={styles.patient}>
           <div className={styles.profile}>
             <figure className={styles.avatar}>
-              {/* <Image
+              <Image
                 className={styles.avatar}
                 src="https://placeimg.com/192/191/people"
                 alt="user"
                 height={42}
                 width={42}
-              /> */}
+              />
             </figure>
             <div>
               <Title size="xs" color="base">

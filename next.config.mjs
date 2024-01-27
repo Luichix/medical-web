@@ -6,6 +6,8 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'placeimg.com',
+        port: '',
+        pathname: '/192/192/people',
       },
       {
         protocol: 'https',

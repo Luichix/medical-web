@@ -4,7 +4,7 @@ import styles from './Table.module.css'
 import Column from './Column'
 import Row from './Row'
 
-export function Table({ headers, records, theme, style, href }: any) {
+export function Table({ headers, records, style, href }: any) {
   const orderRecords =
     records &&
     records.map((record: any) => {
@@ -18,7 +18,7 @@ export function Table({ headers, records, theme, style, href }: any) {
 
   return (
     <div className={styles.container}>
-      <table className={classNames(styles.table, styles[theme], style)}>
+      <table className={classNames(styles.table, style)}>
         <thead className={styles.headerTable}>
           <Column
             styles={styles.th}

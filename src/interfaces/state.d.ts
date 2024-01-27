@@ -25,10 +25,16 @@ export interface Summary {
   laboratoryOrder: number
   prescription: number
   treatment: number
-  patient: string
+  patient: {
+    name: string
+    picture: string
+  }
   result: number
   stage: string
   _id: string
+  lastVisit: string
+  status: string
+  diagnosis: string
 }
 
 export type ConsultState = {

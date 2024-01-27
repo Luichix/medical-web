@@ -1,15 +1,15 @@
 'use client'
-import React, { useContext, useEffect, useState } from 'react'
-import { ThemeContext } from '@/contexts/index'
-import { CLINIC_HEADERS_DUMMIES } from '@/../public/data/patient-dummies'
+import React, { useEffect, useState } from 'react'
 import { Table, Search, Paginate } from '@/components/molecules'
 import classNames from 'classnames'
-import styles from './clinical.module.css'
+import styles from './styles.module.css'
 import { useSelector } from 'react-redux'
 import { RootState, useAppDispatch } from '@/store/store'
 import { Summary } from '@/interfaces/state'
 import { BsPerson } from 'react-icons/bs'
 import { setSearch } from '@/store/slices/clinical.slice'
+import Container from '@/components/templates/Container'
+import { CLINIC_HEADERS_DUMMIES } from '@/../public/data/patient-dummies'
 
 const transformClinicalPatient = (data: Summary[]) => {
   return data
@@ -24,11 +24,9 @@ const getHead = (data: any) => {
   return head
 }
 
-const head = getHead(CLINIC_HEADERS_DUMMIES.es)
+const head = getHead(CLINIC_HEADERS_DUMMIES)
 
 const ClinicalPage = () => {
-  const { theme } = useContext(ThemeContext)
-
   const dispatch = useAppDispatch()
 
   const clinicalRecords = useSelector((state: RootState) => state.clinical)
@@ -44,33 +42,38 @@ const ClinicalPage = () => {
   }, [patientFiltered])
 
   return (
-    <div className={classNames(styles.container, styles[theme])}>
-      <div className={styles.searchContainer}>
-        <Search
-          placeholder="Buscar paciente"
-          value={searchPatient}
-          onChange={(value) => {
-            dispatch(setSearch(value))
-          }}
-        />
-        <div className={styles.buttonsContainer}>
-          <button className={styles.primaryButton}>
-            <BsPerson /> &nbsp; Añadir Paciente
-          </button>
+    <Container>
+      <div className={classNames(styles.container)}>
+        <div className={styles.searchContainer}>
+          <Search
+            placeholder="Search"
+            value={searchPatient}
+            onChange={(value) => {
+              dispatch(setSearch(value))
+            }}
+          />
+          <div className={styles.buttonsContainer}>
+            <button className={styles.primaryButton}>
+              <BsPerson /> &nbsp; Add Patient
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.tableContainer}>
-        <Table
-          headers={head}
-          records={patient}
-          theme={theme}
-          href="/clinical/patient/"
-          style={styles.table}
+        <div className={styles.tableContainer}>
+          <Table
+            headers={head}
+            records={patient}
+            href="/patients/"
+            style={styles.table}
+          />
+        </div>
+        <Paginate
+          data={patientFiltered}
+          setData={setPatient}
+          itemsPerPage={10}
         />
       </div>
-      <Paginate data={patientFiltered} setData={setPatient} itemsPerPage={5} />
-    </div>
+    </Container>
   )
 }
 

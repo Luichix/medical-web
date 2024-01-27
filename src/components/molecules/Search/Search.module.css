@@ -1,25 +1,27 @@
 .search {
-  /* height: 100%; */
-  /* padding: 0 64px 0 64px; */
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 8px;
+  width: 50%;
+  border-radius: var(--border-radius-sm);
+  padding: 0 8px;
+  background-color: var(--color-base-white);
 }
 
 .input::placeholder {
-  color: var(--color-primary-highlight);
+  color: var(--color-primary);
 }
 
 .input {
   font-family: var(--font-family-roboto);
   width: 100%;
   border: none;
-  outline: none;
-  padding: 16px;
   background: none;
   font-size: 1.1rem;
   transition: 0.5s ease;
   line-height: 40px;
+  outline: none;
 }
 
 .icon {
@@ -32,7 +34,7 @@
   font-size: 1.3rem;
   border-radius: var(--border-radius-xs);
   color: var(--color-base-white);
-  background-color: var(--color-primary-highlight);
+  background-color: var(--color-primary);
   display: flex;
   justify-content: center;
   align-items: center;

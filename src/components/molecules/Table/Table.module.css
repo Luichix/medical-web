@@ -11,26 +11,26 @@
 .table {
   border-spacing: 0;
   width: 100%;
-  padding: 0.5rem 0rem 0 0rem;
+  padding: 0.5rem;
   position: relative;
   border-collapse: separate;
-  background: #f9fafb;
-  border: 1px solid var(--color-tertiary-inverted);
+  background: var(--color-base-white);
+  border: 1px solid var(--color-secondary);
 }
 
 .table tbody tr:hover:not(.empty) {
-  outline: 2px solid var(--color-blue-gray-400);
+  outline: 2px solid var(--color-secondary);
   outline-offset: 0px;
   border-collapse: none;
   text-shadow: 0px 0px 0px rgba(32, 86, 126, 0.5);
 }
 
 /* .table tr:hover td {
-  color: var(--color-primary-highlight);
+  color: var(--color-primary);
 } */
 
 .table tr:hover:not(.empty) td:first-child {
-  border-left: 8px solid var(--color-blue-gray-400);
+  border-left: 8px solid var(--color-secondary);
   transition: border 0.15s;
 }
 
@@ -41,10 +41,10 @@
 }
 
 .th {
-  text-indent: 1rem;
+  /* text-indent: 1rem; */
   text-align: left;
   padding: 12px 0;
-  border-bottom: 2px solid var(--color-tertiary-inverted);
+  border-bottom: 2px solid var(--color-secondary);
   white-space: nowrap;
   font-size: var(--font-size-base);
   font-family: var(--font-family-roboto);
@@ -57,15 +57,15 @@
 }
 
 .td {
-  text-indent: 1.5rem;
+  /* text-indent: 1.5rem; */
   font-family: var(--font-family-roboto);
-  color: var(--color-primary-highlight);
+  color: var(--color-font-base);
   min-width: 60px;
   height: 64px;
   text-align: left;
   padding: 0;
   border-collapse: collapse;
-  border-bottom: 1px solid var(--color-tertiary-inverted);
+  border-bottom: 1px solid var(--color-secondary);
   white-space: nowrap;
   font-size: var(--font-size-base);
 }
@@ -76,17 +76,7 @@
 }
 
 .bodyTable {
-  background: #ffffff;
-}
-
-/* ---------------------------------- theme --------------------------------- */
-
-.light {
-  background-color: var(--color-base-white);
-}
-
-.dark {
-  background-color: var(--color-blue-gray-900);
+  background: var(--color-base-white);
 }
 
 /* -------------------------- scroll kit container -------------------------- */
@@ -94,9 +84,7 @@
 .container::-webkit-scrollbar {
   width: 20px; /* Ancho del scrollbar */
   height: 14px; /* Altura del scrollbar */
-  background-color: var(
-    --color-tertiary-muted
-  ); /* Color del fondo del scrollbar */
+  background-color: var(--color-tertiary); /* Color del fondo del scrollbar */
   border-radius: 10px; /* Radio de la esquina del scrollbar */
   border: none;
 }
@@ -107,8 +95,6 @@
 }
 
 .container::-webkit-scrollbar-track {
-  background-color: var(
-    --color-tertiary-muted
-  ); /* Color del track del scrollbar */
+  background-color: var(--color-tertiary); /* Color del track del scrollbar */
   border-radius: 10px; /* Radio de la esquina del track del scrollbar */
 }

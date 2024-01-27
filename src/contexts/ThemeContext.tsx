@@ -1,5 +1,6 @@
+'use client'
 import { createContext, PropsWithChildren, useEffect, useState } from 'react'
-import { IThemeContext, Theme } from '@Interfaces/context'
+import { IThemeContext, Theme } from '@/interfaces/context'
 import { saveToStorage, loadFromStorage } from '@/utils/localStorage'
 
 export const ThemeContext = createContext<IThemeContext>({

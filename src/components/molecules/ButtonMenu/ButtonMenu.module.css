@@ -34,11 +34,11 @@
   display: block;
   width: 17px;
   height: 2px;
-  background-color: var(--color-sky-400);
   border-radius: 1px;
   left: 7px;
   transition: transform 0.1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) 0.2s;
   scale: 1.35;
+  background-color: var(--color-secondary);
 }
 
 .bunCrustTop {

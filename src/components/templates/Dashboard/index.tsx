@@ -1,8 +1,9 @@
+'use client'
 import React, { useState, useContext, ReactNode } from 'react'
 import styles from './dashboardLayout.module.css'
 import classNames from 'classnames'
-import { ThemeContext } from '@Contexts/index'
-import { Sidenav } from 'ui'
+import { ThemeContext } from '@/contexts/index'
+import { Sidenav } from '@/components/templates/Sidenav'
 import Link from 'next/link'
 import { AiOutlineAppstoreAdd, AiTwotoneCalendar } from 'react-icons/ai'
 import { CgLogOut } from 'react-icons/cg'
@@ -17,46 +18,45 @@ import { FaUserDoctor, FaRegCalendarMinus } from 'react-icons/fa6'
 
 const routes = {
   logout: {
-    route: 'Salir',
+    route: 'Logout',
     ref: '/logout',
     id: 'navBarlogout',
   },
   find: {
-    route: 'Pacientes',
-    ref: '/clinical',
+    route: 'Patients',
+    ref: '/patients',
   },
   calendar: {
-    route: 'Calendario',
+    route: 'Calendars',
     ref: '/calendars',
   },
   activities: {
-    route: 'Actividades',
+    route: 'Activities',
     ref: '/activities',
   },
   home: {
-    route: 'Tablero',
+    route: 'Dashboard',
     ref: '/',
   },
   doctors: {
-    route: 'Doctores',
+    route: 'Doctors',
     ref: '/doctors',
   },
   setting: {
-    route: 'Configuración',
+    route: 'Setting',
     ref: '/setting',
   },
   support: {
-    route: 'Soporte',
+    route: 'Support',
     ref: '/support',
   },
 }
 
 export const DashboardLayout = ({ children }: { children: ReactNode }) => {
-  const value = useContext(ThemeContext)
   const [showNav, setShowNav] = useState(false)
 
   return (
-    <div className={classNames(styles.dashboard, styles[value?.theme])}>
+    <div className={classNames(styles.dashboard)}>
       <div className={classNames(styles.container)}>
         <Sidenav show={showNav} onClick={() => setShowNav(!showNav)}>
           <Link href={routes.home.ref} className={styles.group}>

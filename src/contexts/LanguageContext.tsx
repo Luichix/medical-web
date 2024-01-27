@@ -1,5 +1,6 @@
+'use client'
 import { createContext, PropsWithChildren, useEffect, useState } from 'react'
-import { Language, ILanguageContext } from '@Interfaces/context'
+import { Language, ILanguageContext } from '@/interfaces/context'
 import { saveToStorage, loadFromStorage } from '@/utils/localStorage'
 
 export const LanguageContext = createContext<ILanguageContext>({

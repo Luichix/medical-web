@@ -1,3 +1,4 @@
+'use client'
 import {
   ApolloClient,
   InMemoryCache,
@@ -6,7 +7,7 @@ import {
 } from '@apollo/client'
 import { PropsWithChildren } from 'react'
 
-const BASE_HTTP_URL = process.env.NEXT_PUBLIC_HTTP_GRAPHQL_ENDPOINT
+const BASE_HTTP_URL = 'http://localhost:3001' //process.env.NEXT_PUBLIC_HTTP_GRAPHQL_ENDPOINT
 
 const httpLink = new HttpLink({
   uri: BASE_HTTP_URL,

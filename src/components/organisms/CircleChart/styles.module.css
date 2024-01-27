@@ -28,13 +28,13 @@
 }
 /* Tailwind doesn't support inline SVG styling, so it's done here */
 .orange {
-  stroke: #ff9f00;
+  stroke: var(--color-tertiary);
 }
 .purple {
-  stroke: #9e5fff;
+  stroke: var(--color-secondary);
 }
 .blue {
-  stroke: #3b82f6;
+  stroke: var(--color-primary);
 }
 
 /* Additional styles for the progress bars */

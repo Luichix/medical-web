@@ -1,5 +1,6 @@
+'use client'
 import { useState, createContext, PropsWithChildren } from 'react'
-import { IAuthContext, TAuth } from '@Interfaces/context'
+import { IAuthContext, TAuth } from '@/interfaces/context'
 
 export const AuthContext = createContext<IAuthContext | null>(null)
 

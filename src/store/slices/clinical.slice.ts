@@ -26,7 +26,7 @@ const clinicalSlice = createSlice({
     setSearch(state, action: PayloadAction<string>) {
       state.search = action.payload
       state.filteredPatient = state.patient.filter((patient) =>
-        patient.patient.toLowerCase().includes(state.search.toLowerCase()),
+        patient.patient.name.toLowerCase().includes(state.search.toLowerCase()),
       )
     },
     addClinical(state, action) {

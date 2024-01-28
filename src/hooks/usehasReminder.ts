@@ -1,4 +1,4 @@
-import { RootState } from '@Store/store'
+import { RootState } from '@/store/store'
 import { useSelector } from 'react-redux'
 import dayjs from 'dayjs'
 

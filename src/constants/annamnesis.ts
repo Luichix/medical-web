@@ -1,4 +1,4 @@
-import { InputForm } from 'ui'
+import { InputForm } from '@/components/molecules'
 
 export enum InputType {
   TEXT = 'text',

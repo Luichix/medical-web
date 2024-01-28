@@ -1,24 +1,24 @@
 .input {
   font-family: var(--font-family-roboto);
-  color: var(--color-gray-500);
+  color: var(--color-primary);
   width: 100%;
   outline: none;
 }
 
 .input:disabled {
-  background-color: var(--color-gray-100);
+  background-color: var(--color-secondary);
 }
 
 .md {
-  padding: 16px 24px;
+  padding: 16px 16px;
 }
 
 .sm {
-  padding: 12px 24px 12px 12px;
+  padding: 8px 8px 8px 8px;
 }
 
 .xs {
-  padding: 8px 24px 8px 12px;
+  padding: 8px 8x 8px 8px;
 }
 
 /** Length */
@@ -37,16 +37,17 @@
 /* --------------------------------- design --------------------------------- */
 
 .primary {
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-xs);
   border: none;
-  border: 2px solid var(--color-tertiary-inverted);
-  background-color: var(--color-base-white);
+  border-bottom: 2px solid var(--color-primary);
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-secondary);
   font-style: normal;
   font-size: var(--font-size-base);
 }
 
 .primary::placeholder {
-  color: var(--color-tertiary-inverted);
+  color: var(--color-tertiary);
 }
 
 .secondary {

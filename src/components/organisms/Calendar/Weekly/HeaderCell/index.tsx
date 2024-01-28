@@ -1,10 +1,10 @@
 import { IDays } from '@/interfaces/tasks'
-import { daysTextWeek } from '@Constants/calendar'
-import { useHasReminders } from '../../../hooks/usehasReminder'
+import { daysTextWeek } from '@/constants/calendar'
+import { useHasReminders } from '@/hooks/usehasReminder'
 import classNames from 'classnames'
 import dayjs from 'dayjs'
 import styles from './styles.module.css'
-import { Days } from 'ui/src/organisms/Weekly/Weekly'
+import { Days } from '@/components/organisms/Weekly/Weekly'
 
 const HeaderCell = ({ day, index }: { day: Days; index: number }) => {
   return (

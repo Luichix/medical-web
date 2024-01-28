@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client'
-import { client } from '@Contexts/GraphqlContext'
+import { client } from '@/contexts/GraphqlContext'
 
 export class GraphQueries {
   async getPatient(uid: string) {

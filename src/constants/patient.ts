@@ -1,4 +1,4 @@
-import { InputForm } from 'ui'
+import { InputForm } from '@/components/molecules'
 
 export const INPUTS_PROFILE: InputForm[] = [
   {

@@ -3,7 +3,7 @@ import { Reminder } from '@/interfaces/reminder'
 import Category from '../Category'
 import styles from './styles.module.css'
 
-type Category = 'cita' | 'consulta' | 'examen' | 'diagnostico'
+type Category = 'appointment' | 'consultation' | 'exam' | 'diagnosis'
 
 interface RemiderProps {
   category: Category

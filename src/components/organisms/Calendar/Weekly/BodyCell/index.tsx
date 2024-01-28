@@ -1,11 +1,11 @@
-import { ItemTypes } from '@Constants/reminder'
-import { IDays, Reminder } from '@Interfaces/tasks'
+import { ItemTypes } from '@/constants/reminder'
+import { IDays, Reminder } from '@/interfaces/tasks'
 import classNames from 'classnames'
 import { useDrop } from 'react-dnd'
 import { Overlay } from '../../Overlay'
 import ReminderList from '../ReminderList'
 import styles from './styles.module.css'
-import { Days } from 'ui/src/organisms/Weekly/Weekly'
+import { Days } from '@/components/organisms/Weekly/Weekly'
 
 const BodyCell = ({
   dayReminders,
@@ -25,7 +25,7 @@ const BodyCell = ({
         isOver: !!monitor.isOver(),
       }),
     }),
-    []
+    [],
   )
   const moveReminder = () => {
     console.log('Update Reminder')

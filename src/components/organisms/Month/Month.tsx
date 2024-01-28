@@ -2,7 +2,7 @@ import React, { FC, Fragment } from 'react'
 import styles from './Month.module.css'
 import classNames from 'classnames'
 
-const DAYS_TEXT_WEEK = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
+const DAYS_TEXT_WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 interface ExtraProperties {
   isCurrentMonth?: boolean
@@ -83,7 +83,7 @@ export const Month = ({ ListEvent, onClick, month }: MonthProps) => {
                     {/* events */}
                     {ListEvent && <ListEvent ISO={date} events={events} />}
                   </div>
-                )
+                ),
               )}
           </div>
         ))}

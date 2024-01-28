@@ -1,14 +1,14 @@
 import React from 'react'
-import { hoursArrayNumber, hoursArrayString } from '@Constants/calendar'
+import { hoursArrayNumber, hoursArrayString } from '@/constants/calendar'
 import styles from './styles.module.css'
-import HeaderCell from '@Components/customs/Calendar/Weekly/HeaderCell'
-import { IDays, IWeek } from '@Interfaces/tasks'
-import { updateSelectedDate } from '@Store/slices/calendar.slice'
-import { RootState, useAppDispatch } from '@Store/store'
+import HeaderCell from '@/components/organisms/Calendar/Weekly/HeaderCell'
+import { IDays, IWeek } from '@/interfaces/tasks'
+import { updateSelectedDate } from '@/store/slices/calendar.slice'
+import { RootState, useAppDispatch } from '@/store/store'
 import dayjs from 'dayjs'
 import { useSelector } from 'react-redux'
-import BodyCell from '@Components/customs/Calendar/Weekly/BodyCell'
-import { Days } from '../../../../utils/createCalendar'
+import BodyCell from '@/components/organisms/Calendar/Weekly/BodyCell'
+import { Days } from '@/utils/createCalendar'
 
 const Weekly = ({ onModal }: { onModal: () => void }) => {
   const dispatch = useAppDispatch()

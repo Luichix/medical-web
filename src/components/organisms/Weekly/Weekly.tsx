@@ -29,7 +29,7 @@ interface EventsProps {
   dayweekActive: number
 }
 
-const DAYS_TEXT_WEEK = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
+const DAYS_TEXT_WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 const HOURS = [
   '12AM',

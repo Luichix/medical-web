@@ -37,7 +37,7 @@ const Calendars = () => {
     .clone()
     .set('year', calendar.currentYear)
     .set('month', calendar.currentMonth)
-    .locale('es')
+    .locale('en')
     .format('MMMM YYYY')
 
   const indexWeek = calendar.week.weekIndex
@@ -93,54 +93,54 @@ const Calendars = () => {
             </Modal>
           </NoSSR>
           <div className={styles.navigation}>
-            <Title>{date}</Title>
+            <Title color="primary">{date}</Title>
             <div className={styles.actions}>
               <div className={styles.buttonToday}>
                 <button onClick={handlePreviousTimer}>
                   <FiChevronLeft />
                 </button>
-                <span>Hoy</span>
+                <span>Today</span>
                 <button onClick={handleNextTimer}>
                   <FiChevronRight />
                 </button>
               </div>
               <Select
                 id="select"
-                placeholder="seleccione"
+                placeholder="select"
                 name="select"
                 value={view}
                 size="sm"
                 length="short"
                 onChange={(event) => setView(event.target.value)}
                 options={[
-                  { value: 'week', label: 'Semanal' },
-                  { value: 'month', label: 'Mensual' },
+                  { value: 'week', label: 'Weekly' },
+                  { value: 'month', label: 'Monthly' },
                 ]}
               />
               <Button
                 onClick={openModal}
                 dimension="small"
                 size="xxs"
-                color="inverted"
+                color="primary"
               >
-                Nuevo Evento
+                <span className="whitespace-nowrap">+ Add Appointment</span>
               </Button>
             </div>
             <div className={styles.actionsMobile}>
               <Dropdown
                 options={[
                   {
-                    label: 'nuevo evento',
+                    label: 'New Event',
                     value: 'event',
                     onClick: () => openModal(),
                   },
                   {
-                    label: 'semana',
+                    label: 'Weekly',
                     value: 'week',
                     onClick: () => setView('week'),
                   },
                   {
-                    label: 'mes',
+                    label: 'Monthly',
                     value: 'month',
                     onClick: () => setView('month'),
                   },

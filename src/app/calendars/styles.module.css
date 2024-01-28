@@ -1,8 +1,18 @@
 /** container */
 
 .container {
+  background-color: var(--color-base-white);
+  padding: 16px;
+
   width: 100%;
   height: 100%;
+
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 /** navigation */
@@ -26,10 +36,10 @@
   align-items: center;
   padding: 4px;
   border-radius: 20px 20px 20px 20px;
-  background-color: var(--color-tertiary-muted);
+  background-color: var(--color-tertiary);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--color-secondary-muted);
+  border-color: var(--color-secondary);
 }
 
 .period span {
@@ -42,7 +52,7 @@
 }
 
 .period span:hover {
-  background-color: var(--color-tertiary-muted);
+  background-color: var(--color-tertiary);
 }
 
 /** timer */
@@ -60,7 +70,7 @@
   font-size: 1.75rem;
   font-weight: 900;
   text-align: center;
-  color: var(--color-secondary-highlight);
+  color: var(--color-secondary);
 }
 
 .timer h2::first-letter {
@@ -79,22 +89,26 @@
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
   outline: 0;
   font-size: 1.5rem;
   line-height: 0;
-  color: var(#073052);
-  background-color: var(--color-tertiary-muted);
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
 }
 
 .buttonToday button:hover {
-  background-color: var(--color-tertiary-muted);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .buttonToday span {
   font-family: var(--font-family-roboto);
   padding: 0 1rem;
-  color: var(#073052);
+  color: var(--color-font-base);
 }
 
 /* ----------------------------- actions mobile ----------------------------- */

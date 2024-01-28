@@ -74,7 +74,7 @@ const Doctors = () => {
   return (
     <Container>
       <div className="flex flex-col gap-4 w-full h-full  p-4 rounded-lg shadow-lg ">
-        <h2 className="text-primary font-bold text-xl">Doctors</h2>
+        <h2 className="text-primary font-bold text-2xl">Doctors</h2>
         <div className="flex flex-row w-full justify-between items-center">
           <button className="bg-primary text-secondary font-bold p-2 rounded-md">
             + Add Doctor

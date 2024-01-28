@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './styles.module.css'
 import dayjs from 'dayjs'
-import { LabelReminder } from '@Interfaces/tasks'
+import { LabelReminder } from '@/interfaces/tasks'
 import { useDrag } from 'react-dnd'
-import { ItemTypes } from '@Constants/reminder'
+import { ItemTypes } from '@/constants/reminder'
 
 function ReminderLabel({ category, startDate }: LabelReminder) {
   const startHour = dayjs(startDate).format('HH:mm')

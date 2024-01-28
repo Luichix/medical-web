@@ -1,8 +1,8 @@
 import React, { useState, useContext, ReactNode } from 'react'
 import styles from './defaultLayout.module.css'
-import Navbar from '../../customs/Navbar'
+import Navbar from '@/components/templates/Navbar'
 import classNames from 'classnames'
-import { ThemeContext } from '@Contexts/index'
+import { ThemeContext } from '@/contexts/index'
 
 export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   const value = useContext(ThemeContext)

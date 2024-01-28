@@ -1,4 +1,4 @@
-import { Patient, TypeRecord, UpdatePatient } from '@Interfaces/patient'
+import { Patient, TypeRecord, UpdatePatient } from '@/interfaces/patient'
 
 export enum TypeRecordEnum {
   patient = 'patient',
@@ -30,7 +30,7 @@ class PAtientAPI {
   private static createURL(
     type: TypeRecord | UpdatePatient,
     endpoint: string,
-    params?: { [key: string]: string }
+    params?: { [key: string]: string },
   ): string {
     let url = `${this.baseURL}/${type}/${endpoint}`
 
@@ -57,14 +57,14 @@ class PAtientAPI {
 
   static async getAllPatient(): Promise<Patient[]> {
     const response = await fetch(
-      `${this.baseURL}/patient/get-patient?uid=${'84584479'}`
+      `${this.baseURL}/patient/get-patient?uid=${'84584479'}`,
     )
     return response.json()
   }
 
   static async getPatient(uid: string): Promise<Patient[]> {
     const response = await fetch(
-      `${this.baseURL}/patient/get-patient?uid=${uid}`
+      `${this.baseURL}/patient/get-patient?uid=${uid}`,
     )
     return response.json()
   }
@@ -91,7 +91,7 @@ class PAtientAPI {
       {
         method: 'DELETE',
         headers: this.headers,
-      }
+      },
     )
 
     if (!response.ok) {
@@ -105,7 +105,7 @@ class PAtientAPI {
     type: UpdatePatient,
     uid: string,
     idRecord: string,
-    record: Record<string, string>
+    record: Record<string, string>,
   ): Promise<void> {
     if (!uid || !idRecord) {
       throw new Error('uid and id_record are required')
@@ -124,7 +124,7 @@ class PAtientAPI {
         method: 'PUT',
         headers: this.headers,
         body: JSON.stringify(record),
-      }
+      },
     )
     return response.json()
   }
@@ -137,7 +137,7 @@ class PAtientAPI {
   static async addRecord(
     uid: string,
     type: TypeRecord,
-    record: Record<string, string>
+    record: Record<string, string>,
   ): Promise<void> {
     if (!this.validateObject(record, Object.keys(record))) {
       throw new Error('Objects is not valid')
@@ -169,7 +169,7 @@ class PAtientAPI {
   static async deleteRecord(
     uid: string,
     idRecord: string,
-    type: TypeRecord
+    type: TypeRecord,
   ): Promise<void> {
     if (!uid || !idRecord) {
       throw new Error('uid and id_record are required')
@@ -182,7 +182,7 @@ class PAtientAPI {
       {
         method: 'DELETE',
         headers: this.headers,
-      }
+      },
     )
 
     if (!response.ok) {
@@ -196,7 +196,7 @@ class PAtientAPI {
     uid: string,
     type: TypeRecord,
     idRecord: string,
-    record: Record<string, string>
+    record: Record<string, string>,
   ): Promise<void> {
     if (!uid || !idRecord) {
       throw new Error('uid and id_record are required')

@@ -36,7 +36,7 @@ export const hoursArrayString = [
   '11 PM',
 ]
 
-export const daysTextWeek = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
+export const daysTextWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 export const daysText = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
@@ -55,6 +55,6 @@ for (let i = 0; i < 24; i++) {
   const date = new Date()
   date.setHours(i)
   hours.push(
-    date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
   )
 }

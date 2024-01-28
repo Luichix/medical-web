@@ -28,7 +28,7 @@ export interface Calendar {
 const currentDate = dayjs().toISOString()
 const currentDay = dayjs().day()
 const currentYear = dayjs().year()
-const currentMonth = 3
+const currentMonth = 0
 const currentWeek = 0
 const monthInitialState = calculateCalendar(currentYear, currentMonth)
 

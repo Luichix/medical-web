@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import dayjs from 'dayjs'
 import React, { Fragment } from 'react'
 import styles from './styles.module.css'
-import { Days } from '@Utils/createCalendar'
+import { Days } from '@/utils/createCalendar'
 
 interface Appointment {
   _id: string
@@ -45,7 +45,7 @@ const WeekEvents = ({
                       {
                         [styles.showDay]: dayweek === dayweekActive,
                         [styles.hiddenDay]: dayweek !== dayweekActive,
-                      }
+                      },
                     )}
                     style={{
                       gridRow: `${rowStart}  / span ${rowEnd}`,
@@ -84,7 +84,7 @@ const calculateGridItem = ({
   const appointmentStart = start
   const rowHour = dayjs(appointmentStart).hour() * ROWS_FOR_HOUR
   const rowMinute = Math.round(
-    dayjs(appointmentStart).minute() / ROWS_VALUE_ON_MINUTE
+    dayjs(appointmentStart).minute() / ROWS_VALUE_ON_MINUTE,
   )
 
   const rowStart = ROWS_INITIAL_SPACE + rowHour + rowMinute

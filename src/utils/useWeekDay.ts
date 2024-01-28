@@ -1,4 +1,4 @@
-import { daysTextWeek } from '@Constants/calendar'
+import { daysTextWeek } from '@/constants/calendar'
 import dayjs from 'dayjs'
 
 interface Days {
@@ -14,7 +14,7 @@ export const useWeekdays = (week: number) => {
   const sunday = new Date(
     today.getFullYear(),
     today.getMonth(),
-    today.getDate() - currentDay + week * 7
+    today.getDate() - currentDay + week * 7,
   )
 
   // Generar los días de la semana a partir de la fecha del domingo
@@ -24,7 +24,7 @@ export const useWeekdays = (week: number) => {
     const day = new Date(
       sunday.getFullYear(),
       sunday.getMonth(),
-      sunday.getDate() + i
+      sunday.getDate() + i,
     )
     const dayMonth = dayjs(day).get('date')
     const date = dayjs(day).clone().format('DD/MM/YYYY')

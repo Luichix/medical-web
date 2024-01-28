@@ -1,4 +1,4 @@
-import { Reminder } from '@Interfaces/tasks'
+import { Reminder } from '@/interfaces/tasks'
 import ReminderLabel from '../ReminderLabel'
 import styles from './styles.module.css'
 

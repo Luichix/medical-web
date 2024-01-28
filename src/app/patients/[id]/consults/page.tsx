@@ -65,7 +65,7 @@ const PatientPage = ({ params }: { params: { id: string } }) => {
             </figure>
             <div>
               <Title size="xs" color="base">
-                {patient?.patient}
+                {patient?.patient.name}
               </Title>
               <Paragraph size="xxs"> PID: {params.id}</Paragraph>
             </div>
